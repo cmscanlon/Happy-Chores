@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/cmscanlon/Happy-Chores/issues"
   },
-  "homepage": "https://github.com/cmscanlon/Happy-Chores#readme"
+  "homepage": "https://github.com/cmscanlon/Happy-Chores#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
