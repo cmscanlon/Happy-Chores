@@ -6,15 +6,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form>
-    <label for='fname'>First Name</label><br>
-    <input type="text" id="fname" name="fname"><br>
+<form name="InterestForm" action="/submit.php" onsubmit="return validateForm()" method="post">
+    <label for='fname' >First Name</label><br>
+    <input type="text" size=65 id="fname" name="fname"><br>
     <label for="lname">Last Name</label><br>
-    <input type="text" id="lname" name="lname"><br>
-    <label for="email">Email Address</label><br>
-    <input type="email" id="email" name="email"><br>
+    <input type="text" size=65 id="lname" name="lname"><br>
+    <label for="email" >Email Address</label><br>
+    <input type="email" size=65 id="email" name="email"><br>
     <input type="submit" value="Submit"><br>
-    <input type="checkbox" id="accept">
+    <input type="checkbox" id="accept" required>
     <label for="accept">By checking this box you accept the terms of this page.</label>
 
 </form>
