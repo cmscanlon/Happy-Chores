@@ -4,20 +4,38 @@
     <meta charset="UTF-8">
     <title>Happy Chores</title>
     <link rel="stylesheet" href="style.css">
+<!--    <script src="app.js"></script>-->
 </head>
 <body>
-<form name="InterestForm" action="/submit.php" onsubmit="return validateForm()" method="post">
+<form name="interestForm" onsubmit="return formValidation()">
     <label for='fname' >First Name</label><br>
     <input type="text" size=65 id="fname" name="fname"><br>
     <label for="lname">Last Name</label><br>
     <input type="text" size=65 id="lname" name="lname"><br>
     <label for="email" >Email Address</label><br>
-    <input type="email" size=65 id="email" name="email"><br>
-    <input type="submit" value="Submit"><br>
+    <input type="text" size=65 id="email" name="email"><br>
+    <button>Submit</button><br>
     <input type="checkbox" id="accept" required>
     <label for="accept">By checking this box you accept the terms of this page.</label>
-
 </form>
+
+
+<script>
+function formValidation() {
+    const email = document.forms['interestForm']['email'];
+    const fname = document.forms['interestForm']['fname'];
+
+    if (email.value === '') {
+        window.alert("Cannot leave blank. Please enter an email address.");
+        return false;
+    }
+    if (fname.value === '') {
+        window.alert('This is a required field.  Please enter a first name.');
+        return false;
+    }
+    return true;
+}
+</script>
 
 </body>
 </html>
