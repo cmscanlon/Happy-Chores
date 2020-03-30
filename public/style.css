@@ -22,7 +22,6 @@ h1 {
         50% {font: 50px bold;
              font-family: 'schoolbully';}
     }
-
 }
 
 p {
@@ -42,28 +41,3 @@ form {
     transform: translateX(-50%) translateY(-50%);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="number"],
-textarea,
-fieldset {
-  width : 100%;
-  border: 1px solid #333;
-  box-sizing: border-box;
-}
-
-input:invalid {
-  box-shadow: 0 0 5px 1px red;
-}
-
-input:focus:invalid {
-  box-shadow: none;
-}
-
-#rcorners1 {
-  border-radius: 25px;
-  border: 2px solid #73AD21;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
-}

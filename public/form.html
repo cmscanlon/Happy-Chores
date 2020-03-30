@@ -7,17 +7,20 @@
 <!--    <script src="app.js"></script>-->
 </head>
 <body>
-<form name="interestForm" onsubmit="return formValidation()">
+<form name="interestForm" onsubmit="return formValidation() && return validateEmail()">
     <label for='fname' >First Name</label><br>
     <input type="text" size=65 id="fname" name="fname"><br>
     <label for="lname">Last Name</label><br>
     <input type="text" size=65 id="lname" name="lname"><br>
-    <label for="email" >Email Address</label><br>
+    <label for="email" >Email Address*</label><br>
     <input type="text" size=65 id="email" name="email"><br>
     <button>Submit</button><br>
-    <input type="checkbox" id="accept">
-    <label for="accept">By checking this box you accept the terms of this page.</label>
+    <input type="checkbox" id="accept" required>
+    <label for="accept">By checking this box you accept the terms of this page.*</label>
+    <p>* Required Field</p>
 </form>
+
+
 
 
 <script>
@@ -30,6 +33,8 @@ function formValidation() {
     }
     return true;
 }
+
+
 </script>
 
 </body>
