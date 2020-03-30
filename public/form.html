@@ -23,14 +23,9 @@
 <script>
 function formValidation() {
     const email = document.forms['interestForm']['email'];
-    const fname = document.forms['interestForm']['fname'];
 
     if (email.value === '') {
         window.alert("Cannot leave blank. Please enter an email address.");
-        return false;
-    }
-    if (fname.value === '') {
-        window.alert('This is a required field.  Please enter a first name.');
         return false;
     }
     return true;
