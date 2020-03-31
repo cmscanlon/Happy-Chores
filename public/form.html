@@ -14,7 +14,8 @@
     <input type="text" size=65 id="lname" name="lname" placeholder="Enter your last name"/><br>
     <label for="email" >Email Address*</label><br>
     <input type="text" size=65 id="email" name="email" placeholder="Enter your email address" onkeyup="manage(this)"/><br>
-    <input type="submit" id="btSubmit" disabled/><br>
+    <input type="submit" id="submit" disabled/>
+    <button type="clear" id="clear" name="clear" onclick="clearFields();"/>Clear</button><br>
     <input type="checkbox" id="accept" onchange="manage(this)"/>
     <label for="accept">By checking this box you accept the terms of this page.*</label>
     <p>* Required Field</p>
@@ -33,11 +34,9 @@ function formValidation() {
     }
     return true;
 }
-</script>
 
-<script>
 function manage() {
-    const suButton = document.getElementById('btSubmit');
+    const suButton = document.getElementById('submit');
     const checkbox = document.getElementById('accept');
 
     if (email.value != '' && checkbox.checked === true ) {
@@ -46,6 +45,15 @@ function manage() {
         suButton.disabled = true;
         }
     }
+
+function clearFields() {
+    document.getElementById('fname').value === '';
+    document.getElementById('lname').value === '';
+    document.getElementById('email').value === '';
+    document.getElementById('accept').value === '';
+    }
+
+
 
 </script>
 
