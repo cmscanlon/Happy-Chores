@@ -7,19 +7,19 @@
 <!--    <script src="app.js"></script>-->
 </head>
 <body>
-<form name="interestForm" onsubmit="return formValidation() && return validateEmail()">
+<form name="interestForm" onsubmit="return formValidation()">
     <label for='fname' >First Name</label><br>
-    <input type="text" size=65 id="fname" name="fname"><br>
+    <input type="text" size=65 id="fname" name="fname" placeholder="Enter your first name"/><br>
     <label for="lname">Last Name</label><br>
-    <input type="text" size=65 id="lname" name="lname"><br>
+    <input type="text" size=65 id="lname" name="lname" placeholder="Enter your last name"/><br>
     <label for="email" >Email Address*</label><br>
-    <input type="text" size=65 id="email" name="email"><br>
-    <button>Submit</button><br>
-    <input type="checkbox" id="accept" required>
+    <input type="text" size=65 id="email" name="email" placeholder="Enter your email address" onkeyup="manage(this)"/><br>
+    <input type="submit" id="btSubmit" disabled/><br>
+    <input type="checkbox" id="accept" onchange="manage(this)"/>
     <label for="accept">By checking this box you accept the terms of this page.*</label>
     <p>* Required Field</p>
 </form>
-
+</body>
 
 
 
@@ -33,9 +33,23 @@ function formValidation() {
     }
     return true;
 }
+</script>
 
+<script>
+function manage() {
+    const suButton = document.getElementById('btSubmit');
+    const checkbox = document.getElementById('accept');
+
+    if (email.value != '' && checkbox.checked === true ) {
+        suButton.disabled = false;
+    } else {
+        suButton.disabled = true;
+        }
+    }
 
 </script>
 
-</body>
+
+
+
 </html>
