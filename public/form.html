@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Happy Chores</title>
     <link rel="stylesheet" href="style.css">
-<!--    <script src="app.js"></script>-->
+    <script src="form.js"></script>
 </head>
 <body>
 <form name="interestForm" onsubmit="return formValidation()">
@@ -13,51 +13,14 @@
     <label for="lname">Last Name</label><br>
     <input type="text" size=65 id="lname" name="lname" placeholder="Enter your last name"/><br>
     <label for="email" >Email Address*</label><br>
-    <input type="text" size=65 id="email" name="email" placeholder="Enter your email address" onkeyup="manage(this)"/><br>
+    <input type="text" size=65 id="email" name="email" placeholder="Enter your email address" onkeyup="activeSubmit()" /><br>
     <input type="submit" id="submit" disabled/>
-    <button type="clear" id="clear" name="clear" onclick="clearFields();"/>Clear</button><br>
-    <input type="checkbox" id="accept" onchange="manage(this)"/>
+    <button type="clear" id="clear" name="clear"/>Clear</button><br>
+    <input type="checkbox" id="accept" onchange="activeSubmit()"/>
     <label for="accept">By checking this box you accept the terms of this page.*</label>
     <p>* Required Field</p>
 </form>
 </body>
-
-
-
-<script>
-function formValidation() {
-    const email = document.forms['interestForm']['email'];
-
-    if (email.value === '') {
-        window.alert("Cannot leave blank. Please enter an email address.");
-        return false;
-    }
-    return true;
-}
-
-function manage() {
-    const suButton = document.getElementById('submit');
-    const checkbox = document.getElementById('accept');
-
-    if (email.value != '' && checkbox.checked === true ) {
-        suButton.disabled = false;
-    } else {
-        suButton.disabled = true;
-        }
-    }
-
-function clearFields() {
-    document.getElementById('fname').value === '';
-    document.getElementById('lname').value === '';
-    document.getElementById('email').value === '';
-    document.getElementById('accept').value === '';
-    }
-
-
-
-</script>
-
-
 
 
 </html>
