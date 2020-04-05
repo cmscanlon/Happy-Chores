@@ -1,8 +1,8 @@
-function formValidation() {
-  const email = document.getElementById('email');
-  const suButton = document.getElementById('submit');
-  const checkbox = document.getElementById('accept');
+const email = document.getElementById('email');
+const suButton = document.getElementById('submit');
+const checkbox = document.getElementById('accept');
 
+function formValidation() {
   if (validateEmail(email)) {}
   return false;
 
@@ -11,6 +11,7 @@ function formValidation() {
 
 }
 
+//TODO: rewrite validateEmail without using regular expressions
 function validateEmail(email) {
   const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -23,12 +24,11 @@ function validateEmail(email) {
   }
 }
 
-function activeSubmit(suButton) {
-
-    if (email.value != '' && checkbox.checked === true ) {
-        suButton.disabled = false;
-    } else {
-        suButton.disabled = true;
-        }
-    }
+function activeSubmit() {
+  if (email.value != '' && checkbox.checked === true ) {
+    suButton.disabled = false;
+  } else {
+    suButton.disabled = true;
+  }
+}
 
