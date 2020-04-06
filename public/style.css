@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(to right, purple , black, purple);
+    background-image: linear-gradient(to right, blue , black, blue);
     padding: 0;
     margin:0;
 }
@@ -22,10 +22,22 @@ h1 {
         50% {font: 50px bold;
              font-family: 'schoolbully';}
     }
-
 }
 
 p {
     color: white;
     text-align: center;
 }
+
+form {
+    font-family: 'lato';
+    text-align: center;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
