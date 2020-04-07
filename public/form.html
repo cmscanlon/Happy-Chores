@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Happy Chores</title>
     <link rel="stylesheet" href="style.css">
-    <script src="form.js"></script>
 </head>
 <body>
 <form name="interestForm" onsubmit="return formValidation()">
@@ -14,12 +13,16 @@
     <input type="text" size=65 id="lname" name="lname" placeholder="Enter your last name"/><br>
     <label for="email" >Email Address*</label><br>
     <input type="text" size=65 id="email" name="email" placeholder="Enter your email address" onkeyup="activeSubmit()" /><br>
+    <span id="error" style="color:red   "></span>
     <input type="submit" id="submit" disabled/>
     <button type="clear" id="clear" name="clear" onclick="clearForm()"/>Clear</button><br>
     <input type="checkbox" id="accept" onchange="activeSubmit()"/>
     <label for="accept">By checking this box you accept the terms of this page.*</label>
     <p>* Required Field</p>
 </form>
+
+<!-- form.js needs to be loaded after form html elements -->
+<script src="form.js"></script>
 </body>
 
 
