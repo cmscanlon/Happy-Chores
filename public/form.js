@@ -23,6 +23,26 @@ function validateEmail(email) {
   }
 }
 
+function clearForm () {
+    const elements = oForm.elements;
+
+    for (i = 0; i < elements.length; i++) {
+        const fieldType = elements[i].type.toLowerCase();
+        switch (fieldType) {
+        case 'text':
+            elements[i].value = '';
+            break;
+        case 'checkbox':
+            if (elements[i].checked) {
+                elements[i].checked = false;
+            }
+            break;
+            default:
+            break;
+        }
+    }
+}
+
 function activeSubmit(suButton) {
 
     if (email.value != '' && checkbox.checked === true ) {
