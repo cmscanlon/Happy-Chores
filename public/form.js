@@ -12,16 +12,26 @@ function formValidation() {
 }
 
 //TODO: rewrite validateEmail without using regular expressions
-function validateEmail(email) {
-  const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+function isValid(email) {
 
-  if(email.value.match(mailFormat)) {
-    return true;
-  } else {
-    alert("Please enter a valid email address.")
-    email.focus();
-    return false;
+const atSymbol = email.indexOf('@');
+  if (atSymbol < 1) return false;
+
+const dot = email.indexOf('.');
+    if(dot <= atSymbol + 2) return false;
+
+    if (dot === email.length - 1) return false;
+
+return true;
   }
+
+function validateEmail() {
+    const email = document.getElementById('email').value;
+    const error = document.getElementById('error');
+    error.innerHTML = '';
+    if (!isValid(email)) {
+        error.innerHTML = "Please enter a valid email address.";
+    }
 }
 
 function activeSubmit() {
