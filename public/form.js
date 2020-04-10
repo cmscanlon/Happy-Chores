@@ -41,23 +41,22 @@ function activeSubmit() {
   }
 }
 
-//function clearFields() {
-//    const elements = oForm.elements;
-//
-//    for (i = 0; i < elements.length; i++) {
-//        fieldType = elements[i].type.toLowerCase();
-//        switch (fieldType) {
-//        case 'text':
-//            elements[i].value = '';
-//            break;
-//        case 'checkbox':
-//            if (elements[i].checked) {
-//                elements[i].checked = false;
-//            }
-//            break
-//        default:
-//            break;
-//        }
-//    }
+function clearFields() {
+    const elements = document.getElementById('interestForm').elements;
 
-
+    for (i = 0; i < elements.length; i++) {
+        fieldType = elements[i].type.toLowerCase();
+        switch (fieldType) {
+        case 'text':
+            elements[i].value = '';
+            break;
+        case 'checkbox':
+            if (elements[i].checked) {
+                elements[i].checked = false;
+            }
+            break
+        default:
+            break;
+        }
+    }
+}

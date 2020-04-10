@@ -39,3 +39,20 @@ function validateEmail(email) {
     return false;
   }
 }
+
+<form name="interestForm" onsubmit="return formValidation()">
+    <ul>
+    <li><label for='fname' >First Name</label></li>
+    <li><input type="text" size=65 id="fname" name="fname" placeholder="Enter your first name"/></li>
+    <li><label for="lname">Last Name</label><br></li>
+    <li><input type="text" size=65 id="lname" name="lname" placeholder="Enter your last name"/></li>
+    <li><label for="email" >Email Address*</label></li>
+    <li><input type="text" size=65 id="email" name="email" placeholder="Enter your email address" onkeyup="activeSubmit()" /></li>
+    <li><span id="error" style="color:red   "></span></li>
+    <li><input type="submit" id="submit" disabled/></li>
+    <li><button type="clear" id="clear" name="clear"/>Clear</button></li>
+    <li><input type="checkbox" id="accept" onchange="activeSubmit()"/></li>
+    <li><label for="accept">By checking this box you accept the terms of this page.*</label></li>
+    <li><p>* Required Field</p></li>
+    </ul>
+</form>
