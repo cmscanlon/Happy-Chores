@@ -3,12 +3,8 @@ const suButton = document.getElementById('submit');
 const checkbox = document.getElementById('accept');
 
 function formValidation() {
-  if (validateEmail(email)) {}
-  return false;
-
-  if(activeSubmit(suButton)) {}
-    return false;
-
+  //TODO: check that form is valide
+  return true;
 }
 
 //TODO: rewrite validateEmail without using regular expressions
