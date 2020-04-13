@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form name="interestForm" onsubmit="return formValidation()">
+<form method="POST" name="interestForm" onsubmit="return formValidation()" action="/submit-form">
     <label for='fname' >First Name</label><br>
     <input type="text" size=65 id="fname" name="fname" placeholder="Enter your first name"/><br>
     <label for="lname">Last Name</label><br>
