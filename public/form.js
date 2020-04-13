@@ -3,6 +3,7 @@ const suButton = document.getElementById('submit');
 const checkbox = document.getElementById('accept');
 
 function formValidation() {
+<<<<<<< HEAD
 
   if (validateEmail(email)) {}
   return false;
