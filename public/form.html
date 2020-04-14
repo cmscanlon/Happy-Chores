@@ -6,19 +6,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form method="POST" name="interestForm" onsubmit="return formValidation()" action="/submit-form">
-    <label for='fname' >First Name</label><br>
-    <input type="text" size=65 id="fname" name="fname" placeholder="Enter your first name"/><br>
-    <label for="lname">Last Name</label><br>
-    <input type="text" size=65 id="lname" name="lname" placeholder="Enter your last name"/><br>
-    <label for="email" >Email Address*</label><br>
-    <input type="text" size=65 id="email" name="email" placeholder="Enter your email address" onkeyup="activeSubmit()" /><br>
-    <input type="submit" id="submit" disabled/>
-    <button type="clear" id="clear" name="clear"/>Clear</button><br>
-    <input type="checkbox" id="accept" onchange="activeSubmit()"/>
-    <label for="accept">By checking this box you accept the terms of this page.*</label>
-    <p>* Required Field</p>
-</form>
+<<<<<<< HEAD
+<div class="wrapper">
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Sign Up</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="top-container">
+        <header class="showcase">
+            <h1>Happy Chores</h1>
+            <p>The place where happy kids doing chores meets happy parents!</p>
+        </header>
+    </section>
+</div>
+
+<div class="sign-up-form">
+    <h1>Send Me More Information</h1>
+    <form name="interestForm" id=interestForm onsubmit="return formValidation()" />
+        <input type="text" name="fname" id="fname" placeholder="First Name" />
+        <input type="text" name="lname" id="lname" placeholder="Last Name" />
+        <input type="text" name="email" id="email" placeholder="Email Address*" onkeyup="activeSubmit()"/>
+        <span id="error" style="color:red"></span>
+        <input type="submit" value="Submit" id="submit" disabled />
+        <input type="button" id="clear" name=clear" value="Clear" onclick="clearFields(this.form)"/></button><br>
+        <input type="checkbox" name="accept" id="accept" onchange="activeSubmit()" />
+        <label for="accept">By checking this box you accept the terms of this page.*</label>
+        <p style="color:red">*Required Field</p>
+    </form>
+</div>
 
 <!-- form.js needs to be loaded after form html elements -->
 <script src="form.js"></script>
@@ -26,3 +46,4 @@
 
 
 </html>
+
