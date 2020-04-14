@@ -3,7 +3,6 @@ const suButton = document.getElementById('submit');
 const checkbox = document.getElementById('accept');
 
 function formValidation() {
-<<<<<<< HEAD
 
   if (validateEmail(email)) {}
   return false;
@@ -18,9 +17,21 @@ const atSymbol = email.indexOf('@');
   if (atSymbol < 1) return false;
 
 const dot = email.indexOf('.');
+const part = email.split('@');
+const afterDot = part[1].indexOf('.');
+const len = part[1].length;
+const dotSplits = part[1].split('.');
+const dotAmt = dotSplits.length -1;
 
   if(dot <= atSymbol + 2) return false;
   if (dot === email.length - 1) return false;
+  if (dot == - 1 || dot < 2 || dotAmt > 2) return false
+
+  for (var i = 0; i < dotSplits.length; i++) {
+    if (dotSplits[i].length === 0) {
+        return false;
+    }
+  }
 
 return true;
 }

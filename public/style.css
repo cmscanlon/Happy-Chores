@@ -156,7 +156,7 @@ img {
 	border: 1px solid #43D1AF;
 }
 
-.sign-up-form input[type="submit"],
+/*.sign-up-form input[type="submit"],
 .sign-up-form input[type="button"]{
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
