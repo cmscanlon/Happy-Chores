@@ -12,28 +12,36 @@ html {
 }
 
 body {
-    background: #ccc;
+    background: #fff;
     margin: 30px 50px;
     line-height: 1.4;
 }
 
-.btn {
-    background: var(--dark);
-    color: var(--light);
-    padding: 0.6rem 1.3rem;
-    text-decoration: none;
-    border: 0;
+img {
+    max-width: auto;
+    display: center;
+    max-height: 150px;
 }
 
-img {
-    max-width: 100%;
+.top-logo {
+    grid-area: showcase;
+    min-height: 200px;
+    background: url(img/pic2.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
 }
 
 .wrapper {
     display: grid;
     grid-gap: 20px;
 }
-
 
 .main-nav ul {
     display: grid;
@@ -51,7 +59,7 @@ img {
     text-align: center;
     color: var(--dark);
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: .9rem;
     box-shadow: var(--shadow);
 }
 
@@ -65,24 +73,21 @@ img {
 	max-width: 400px;
 	margin: 10px auto;
 	padding: 16px;
-	background: #F7F7F7;
+	float: left;
 }
-.sign-up-form h1{
-	background: var(--dark);
-	padding: 20px 0;
-	font-size: 140%;
-	font-weight: 300;
-	text-align: center;
-	color: #fff;
-	margin: -16px -16px 16px -16px;
+
+.form-header {
+    padding: 10px 0;
+    font-size: 100 %;
+    font-weight: 300;
+    text-align: left;
+    margin: -16px -16px 16px -16px;
 }
+
 .sign-up-form input[type="text"],
 .sign-up-form input[type="submit"],
 .sign-up-form input[type="checkbox"],
-.sign-up-form select
-
-
-{
+.sign-up-form select {
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
@@ -99,19 +104,18 @@ img {
 	color: #555;
 	font: 95% Arial, Helvetica, sans-serif;
 }
+
 .sign-up-form input[type="text"]:focus,
 .sign-up-form input[type="submit"]:focus,
 .sign-up-form input[type="checkbox"]:focus,
-.sign-up-form select:focus
-
-{
+.sign-up-form select:focus {
 	box-shadow: 0 0 5px #43D1AF;
 	padding: 3%;
 	border: 1px solid #43D1AF;
 }
 
 .sign-up-form input[type="submit"],
-.sign-up-form input[type="button"]{
+.sign-up-form input[type="button"] {
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -124,7 +128,23 @@ img {
 	border-left-style: none;
 	color: #fff;
 }
+
 .sign-up-form input[type="submit"]:hover,
-.sign-up-form input[type="button"]:hover{
+.sign-up-form input[type="button"]:hover {
 	background: var(--dark);
+}
+
+.sign-up-form input[type='checkbox'] {
+    float: left;
+  width: 20px;
+}
+
+.sign-up-form input[type='checkbox'] + label {
+  display: block;
+  width: 500px;
+}
+
+.sign-up-form p {
+    text-align: right;
+
 }
