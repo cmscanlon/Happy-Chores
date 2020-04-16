@@ -19,13 +19,13 @@ body {
 
 img {
     max-width: auto;
-    height: auto;
-    max-height: 200px;
+    display: center;
+    max-height: 150px;
 }
 
 .top-logo {
     grid-area: showcase;
-    min-height: 400px;
+    min-height: 200px;
     background: url(img/pic2.jpg);
     background-size: cover;
     background-position: center;
@@ -77,7 +77,7 @@ img {
 }
 
 .form-header {
-    padding: 20px 0;
+    padding: 10px 0;
     font-size: 100 %;
     font-weight: 300;
     text-align: left;
@@ -144,3 +144,7 @@ img {
   width: 500px;
 }
 
+.sign-up-form p {
+    text-align: right;
+
+}
