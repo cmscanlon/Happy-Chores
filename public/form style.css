@@ -19,13 +19,16 @@ body {
 
 img {
     max-width: auto;
-    display: center;
+    display: block;
+    margin: auto;
+    width: 50%;
     max-height: 150px;
 }
 
 .top-logo {
     grid-area: showcase;
-    min-height: 200px;
+   height: auto;
+   max-width: 100%;
     background: url(img/pic2.jpg);
     background-size: cover;
     background-position: center;
@@ -36,6 +39,7 @@ img {
     justify-content: center;
     box-shadow: var(--shadow);
     border-radius: 8px;
+    opacity: 0.7;
 }
 
 .wrapper {
@@ -147,4 +151,9 @@ img {
 .sign-up-form p {
     text-align: right;
 
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
