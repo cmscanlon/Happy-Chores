@@ -30,8 +30,10 @@
     <form name="interestForm" id=interestForm onsubmit="return formValidation()" />
         <input type="text" name="fname" id="fname" placeholder="First Name" />
         <input type="text" name="lname" id="lname" placeholder="Last Name" />
-        <input type="text" name="email" id="email" placeholder="Email Address*" onkeyup="activeSubmit()"/>
-        <span id="error" style="color:red"></span>
+        <div>
+            <input type="text" name="email" id="email" placeholder="Email Address*" onkeyup="activeSubmit()" />
+            <span id="error" style="color:red"></span>
+        </div>
         <input type="submit" value="Submit" id="submit" disabled />
         <input type="button" id="clear" name=clear" value="Clear" onclick="clearFields(this.form)"/></button><br>
         <input type="checkbox" name="accept" id="accept" onchange="activeSubmit()" />
@@ -44,6 +46,8 @@
 <!-- form.js needs to be loaded after form html elements -->
 <script src="form.js"></script>
 </body>
+
+
 
 
 </html>

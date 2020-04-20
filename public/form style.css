@@ -1,7 +1,9 @@
 :root {
-    --primary: #ddd;
-    --dark: #333;
-    --light: #fff;
+    --primary: #8d8c8a;
+    --dark: #363538;
+    --light: #f6f6f6;
+    --lightPop: #52d6f4;
+    --darkPop: #408697;
     --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
@@ -12,8 +14,8 @@ html {
 }
 
 body {
-    background: #fff;
-    margin: 30px 50px;
+    background: #f6f6f6;
+    margin: 10px 10px;
     line-height: 1.4;
 }
 
@@ -43,6 +45,8 @@ img {
     grid-gap: 20px;
 }
 
+/* Main Nav */
+
 .main-nav ul {
     display: grid;
     grid-gap: 20px;
@@ -64,9 +68,11 @@ img {
 }
 
 .main-nav a:hover {
-    background: var(--dark);
+    background: var(--darkPop);
     color: var(--light);
 }
+
+/* Form Style */
 
 .sign-up-form {
 	font: 95% Arial, Helvetica, sans-serif;
@@ -108,10 +114,10 @@ img {
 .sign-up-form input[type="text"]:focus,
 .sign-up-form input[type="submit"]:focus,
 .sign-up-form input[type="checkbox"]:focus,
-.sign-up-form select:focus {
+.sign-up-form input[type="button"]:focus {
 	box-shadow: 0 0 5px #43D1AF;
 	padding: 3%;
-	border: 1px solid #43D1AF;
+	border: 1px solid var(--lightPop);
 }
 
 .sign-up-form input[type="submit"],
@@ -122,16 +128,17 @@ img {
 	width: 100%;
 	padding: 3%;
 	background: var(--primary);
-	border-bottom: 2px solid var(--dark);
+	border-bottom: 2px solid var(--lightPop);
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;
 	color: #fff;
+	font: 95% Arial, Helvetica, sans-serif;
 }
 
 .sign-up-form input[type="submit"]:hover,
 .sign-up-form input[type="button"]:hover {
-	background: var(--dark);
+	background: var(--lightPop);
 }
 
 .sign-up-form input[type='checkbox'] {
@@ -146,5 +153,17 @@ img {
 
 .sign-up-form p {
     text-align: right;
+}
 
+<<<<<<< Updated upstream
+=======
+.error {
+    display: block;
+    width: 1000px;
+}
+
+.sign-up-form input[type="submit"]:disabled {
+  background: var(--light);
+  color: var(--primary);
+>>>>>>> Stashed changes
 }
