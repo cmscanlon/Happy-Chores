@@ -20,15 +20,16 @@ body {
 }
 
 img {
-    max-width: auto;
-    display: center;
-    max-height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 200px;
 }
 
 .top-logo {
     grid-area: showcase;
     min-height: 200px;
-    background: url(img/pic2.jpg);
+    background: url(img/pic3.jpg);
     background-size: cover;
     background-position: center;
     padding: 3rem;
@@ -40,12 +41,12 @@ img {
     border-radius: 8px;
 }
 
+/* Main Nav */
+
 .wrapper {
     display: grid;
     grid-gap: 20px;
 }
-
-/* Main Nav */
 
 .main-nav ul {
     display: grid;
@@ -155,15 +156,8 @@ img {
     text-align: right;
 }
 
-<<<<<<< Updated upstream
-=======
-.error {
-    display: block;
-    width: 1000px;
-}
-
 .sign-up-form input[type="submit"]:disabled {
   background: var(--light);
   color: var(--primary);
->>>>>>> Stashed changes
+
 }
