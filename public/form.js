@@ -39,6 +39,7 @@ return true;
 function validateEmail() {
 const email = document.getElementById('email').value;
 const error = document.getElementById('error');
+
     error.textContent = '';
     if (!isValid(email)) {
         error.textContent = "Please enter a valid email address.";
@@ -72,3 +73,4 @@ function clearFields() {
         }
     }
 }
+

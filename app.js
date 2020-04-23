@@ -18,7 +18,9 @@ app.post('/submit-form', (req, res) => {
     // res.render('sample');
     console.log(req.body);
     res.render('sample',
-        { email : req.body.email }
+        { email : req.body.email,
+         fname: req.body.fname,
+         lname: req.body.lname }
     )
 })
 
