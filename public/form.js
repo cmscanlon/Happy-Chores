@@ -23,7 +23,7 @@ const len = part[1].length;
 const dotSplits = part[1].split('.');
 const dotAmt = dotSplits.length -1;
 
-  if(dot <= atSymbol + 2) return false;
+  if(dot <= atSymbol + 1) return false;
   if (dot === email.length - 1) return false;
   if (dot == - 1 || dot < 2 || dotAmt > 2) return false
 
