@@ -39,9 +39,9 @@ return true;
 function validateEmail() {
 const email = document.getElementById('email').value;
 const error = document.getElementById('error');
-    error.innerHTML = '';
+    error.textContent = '';
     if (!isValid(email)) {
-        error.innerHTML = "Please enter a valid email address.";
+        error.textContent = "Please enter a valid email address.";
     }
 }
 

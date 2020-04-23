@@ -1,76 +1,5 @@
-:root {
-    --primary: #ddd;
-    --dark: #333;
-    --light: #fff;
-    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-}
 
-html {
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    color: var(--dark);
-}
-
-body {
-    background: #fff;
-    margin: 30px 50px;
-    line-height: 1.4;
-}
-
-img {
-    max-width: auto;
-    display: block;
-    margin: auto;
-    width: 50%;
-    max-height: 150px;
-}
-
-.top-logo {
-    grid-area: showcase;
-   height: auto;
-   max-width: 100%;
-    background: url(img/pic2.jpg);
-    background-size: cover;
-    background-position: center;
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
-    box-shadow: var(--shadow);
-    border-radius: 8px;
-    opacity: 0.7;
-}
-
-.wrapper {
-    display: grid;
-    grid-gap: 20px;
-}
-
-.main-nav ul {
-    display: grid;
-    grid-gap: 20px;
-    padding: 0;
-    list-style: none;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.main-nav a {
-    background: var(--primary);
-    display: block;
-    text-decoration: none;
-    padding: 0.8rem;
-    text-align: center;
-    color: var(--dark);
-    text-transform: uppercase;
-    font-size: .9rem;
-    box-shadow: var(--shadow);
-}
-
-.main-nav a:hover {
-    background: var(--dark);
-    color: var(--light);
-}
+/* Form Style */
 
 .sign-up-form {
 	font: 95% Arial, Helvetica, sans-serif;
@@ -112,10 +41,10 @@ img {
 .sign-up-form input[type="text"]:focus,
 .sign-up-form input[type="submit"]:focus,
 .sign-up-form input[type="checkbox"]:focus,
-.sign-up-form select:focus {
+.sign-up-form input[type="button"]:focus {
 	box-shadow: 0 0 5px #43D1AF;
 	padding: 3%;
-	border: 1px solid #43D1AF;
+	border: 1px solid var(--lightPop);
 }
 
 .sign-up-form input[type="submit"],
@@ -126,16 +55,17 @@ img {
 	width: 100%;
 	padding: 3%;
 	background: var(--primary);
-	border-bottom: 2px solid var(--dark);
+	border-bottom: 2px solid var(--lightPop);
 	border-top-style: none;
 	border-right-style: none;
 	border-left-style: none;
 	color: #fff;
+	font: 95% Arial, Helvetica, sans-serif;
 }
 
 .sign-up-form input[type="submit"]:hover,
 .sign-up-form input[type="button"]:hover {
-	background: var(--dark);
+	background: var(--lightPop);
 }
 
 .sign-up-form input[type='checkbox'] {
@@ -150,6 +80,11 @@ img {
 
 .sign-up-form p {
     text-align: right;
+}
+
+.sign-up-form input[type="submit"]:disabled {
+  background: var(--light);
+  color: var(--primary);
 
 }
 
