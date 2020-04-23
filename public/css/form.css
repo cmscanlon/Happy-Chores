@@ -1,3 +1,4 @@
+
 /* Form Style */
 
 .sign-up-form {
@@ -85,4 +86,20 @@
   background: var(--light);
   color: var(--primary);
 
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sign-up-form input[id='email'] + span {
+    display: block;
+    text-align: right;
+    width: 625px;
+    font-size: 85%;
+}
+
+.sign-up-form input[id='email'] {
+    float: left;
 }
