@@ -1,11 +1,38 @@
 doctype html
 html
     head
-
+        link(rel="stylesheet" href="css/style.css")
     body
+        div.top-logo
+            img(src="img/Asset 2@2x.png")
+        div.wrapper
+            nav.main-nav
+                ul
+                    li
+                        a(href="index.html") Home
+                    li
+                        a(href="about.html") About
+                    li
+                        a(href="form.html") Sign Up
+                    li
+                        a(href="#") Contact
+
+
         h1 Thank you for your interest in Happy Chores!
         p This is the information that you have added to our records.
-        div
-            div="Email: " + email
-            div="First Name: " + fname
-            div="Last Name : " + lname
+
+        - const user = { email, fname, lname }
+        if user.email != ''
+            p
+                | Email:
+                strong #{user.email}
+        if user.fname != ''
+            p
+                | First Name:
+                strong #{user.fname}
+        if user.lname != ''
+            p
+                | Last Name:
+                strong #{user.lname}
+
+
