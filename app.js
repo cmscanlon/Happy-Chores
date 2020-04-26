@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true })) // for parsing application/x-www
 
 app.set("view engine","jade")
 
-app.get('/', (req, res) => res.send('Hello World!'))
+//app.get('/', (req, res) => res.send('Hello World!'))
 
 app.post('/submit-form', (req, res) => {
     //const username = req.body.foo
@@ -25,7 +25,7 @@ app.post('/submit-form', (req, res) => {
 })
 
 
-app.listen(port, () => console.log(`Happy app listening on port ${port}!`))
+app.listen(port, () => console.log(`Happy Chore app listening on port ${port}!`))
 
 const startServerAndTest = require("start-server-and-test")
 
