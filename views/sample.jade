@@ -17,22 +17,22 @@ html
                     li
                         a(href="#") Contact
 
+        div.thanks
+            h1 Thank you for your interest in Happy Chores!
+            p This is the information that you have added to our records.
 
-        h1 Thank you for your interest in Happy Chores!
-        p This is the information that you have added to our records.
+            - const user = { email, fname, lname }
+            if user.email != ''
+                p
+                    | Email:
+                    strong #{user.email}
+            if user.fname != ''
+                p
+                    | First Name:
+                    strong #{user.fname}
+            if user.lname != ''
+                p
+                    | Last Name:
+                    strong #{user.lname}
 
-        - const user = { email, fname, lname }
-        if user.email != ''
-            p
-                | Email:
-                strong #{user.email}
-        if user.fname != ''
-            p
-                | First Name:
-                strong #{user.fname}
-        if user.lname != ''
-            p
-                | Last Name:
-                strong #{user.lname}
-
-
+            p When our site goes live you will be notified.

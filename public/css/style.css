@@ -72,3 +72,9 @@ img {
     background: var(--primary);
     color: var(--dark);
 }
+
+/* Submit Form */
+
+.thanks {
+    text-align: center;
+}
