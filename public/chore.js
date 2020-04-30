@@ -17,3 +17,16 @@ function clearFields() {
         }
     }
 }
+
+
+const choreList = ["Make Bed", "Walk Dogs", "Clean Room", "Empty Dishwasher"];
+const list = document.createElement('ul');
+
+choreList.forEach(function (choreList) {
+    const li = document.createElement('li');
+    li.textContent = choreList;
+    list.appendChild(li);
+});
+
+const app = document.querySelector('#app');
+app.appendChild(list);
