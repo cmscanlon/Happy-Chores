@@ -19,12 +19,13 @@ function clearFields() {
 }
 
 
-const choreList = ["Make Bed", "Walk Dogs", "Clean Room", "Empty Dishwasher"];
+const choreList = [{ name: "Make Bed", assignee: "Kyle"}, { name: "Walk Dogs", assignee: "Kyle"},
+                    { name: "Clean Room", assignee: "Kyle"}, { name: "Empty Dishwasher", assignee: "Kyle"}];
 const list = document.createElement('ul');
 
-choreList.forEach(function (choreList) {
+choreList.forEach(function (chore) {
     const li = document.createElement('li');
-    li.textContent = choreList;
+    li.textContent = `Chore: ${chore.name} - Assigned to: ${chore.assignee}`;
     list.appendChild(li);
 });
 
