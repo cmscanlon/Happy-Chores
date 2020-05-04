@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chores</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="form.html">Sign Up</a></li>
+            <li><a href="chores.html">Chores</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="top-logo">
+    <img src="img/Asset 2@2x.png" class="logo"/>
+</div>
+
+<div class="chore-list">
+    <div class="chore-list-header">
+        <h1>Chore List</h1>
+    </div>
+    <div id="app"></div>
+</div>
+
+<div class="chore-form">
+    <div class="chore-header">
+        <h1>Add A Chore</h1>
+    </div>
+        <form name="chore" id=chore-form />
+        <input type="text" name="chore" id="chore" placeholder="What chore do you want to add?" />
+        <input type="text" name="assigned" id="assigned" placeholder="Who do you want assign this chore to?" />
+        <input type="submit" value="Submit" id="submit"/>
+        <input type="button" id="clear" name=clear" value="Clear" onclick="clearFields(this.form)"/></button>
+        </form>
+</div>
+
+
+
+<script src="chore.js"></script>
+</body>
+</html>
