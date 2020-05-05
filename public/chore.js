@@ -32,9 +32,20 @@ choreList.forEach(function (chore) {
 const app = document.querySelector('#app');
 app.appendChild(list);
 
+const newChore = {
+    name: document.getElementById('chore').value,
+    assigned: document.getElementById('assigned').value
+}
+
+
 function addChore() {
-    newChore = document.getElementById('chore').value;
+const newChore = {
+    name: document.getElementById('chore').value,
+    assigned: document.getElementById('assigned').value
+}
+    Object.create(newChore);
     choreList.push(newChore);
     console.log(choreList);
     return false;
+
 }
