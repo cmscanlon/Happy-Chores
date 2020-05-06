@@ -46,6 +46,7 @@ img {
 .wrapper {
     display: grid;
     grid-gap: 20px;
+
 }
 
 .main-nav ul {
