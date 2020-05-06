@@ -36,7 +36,7 @@ app.appendChild(list);
 function addChore() {
     const newChore = {
         name: document.getElementById('chore').value,
-        assigned: document.getElementById('assigned').value
+        assignee: document.getElementById('assigned').value
     }
         choreList.push(newChore);
         console.log(choreList);
