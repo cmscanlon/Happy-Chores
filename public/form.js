@@ -3,12 +3,12 @@ const suButton = document.getElementById('submit');
 const checkbox = document.getElementById('accept');
 
 function formValidation() {
-
-  if (validateEmail(email)) {}
+    console.log("Validate Email", emailValidation(email));
+    console.log("Active Submit", submitActive(suButton));
+  if (emailValidation(email) && submitActive(suButton)) {
+        return true;
+     }
   return false;
-
-  if(activeSubmit(suButton)) {}
-    return false;
 }
 
 function isValid(email) {
@@ -36,20 +36,25 @@ const dotAmt = dotSplits.length -1;
 return true;
 }
 
-function validateEmail() {
+function emailValidation() {
 const email = document.getElementById('email').value;
 const error = document.getElementById('error');
+
     error.textContent = '';
     if (!isValid(email)) {
         error.textContent = "Please enter a valid email address.";
+        return false;
     }
+    return true;
 }
 
-function activeSubmit() {
+function submitActive() {
   if (email.value != '' && checkbox.checked === true ) {
     suButton.disabled = false;
+    return true;
   } else {
     suButton.disabled = true;
+    return false;
   }
 }
 
@@ -72,3 +77,6 @@ function clearFields() {
         }
     }
 }
+
+
+
