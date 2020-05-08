@@ -29,17 +29,17 @@ choreList.forEach(function (chore) {
     list.appendChild(li);
 });
 
+const app = document.querySelector('#app');
+app.appendChild(list);
 
-function addChore() { 
+function addChore() {
     const newLi = document.createElement('li');
     const newChore = {
         name: document.getElementById('chore').value,
         assignee: document.getElementById('assigned').value
     }
     newLi.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
-    // choreList.push(newChore);
+    choreList.push(newChore);
     list.appendChild(newLi);
     return false;
 }
-const app = document.querySelector('#app');
-app.appendChild(list);
