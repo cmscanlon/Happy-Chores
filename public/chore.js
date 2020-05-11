@@ -1,16 +1,17 @@
 
-const app = document.querySelector('#app');
-app.appendChild(list);
-
 const choreList = [{ name: "Make Bed", assignee: "Kyle"}, { name: "Walk Dogs", assignee: "Kyle"},
                     { name: "Clean Room", assignee: "Kyle"}, { name: "Empty Dishwasher", assignee: "Kyle"}];
-const list = document.createElement('ul');
 
+const app = document.querySelector('.chore-list');
+
+app.addEventListener('click', function(c) {
+    this.removeChild(c.target);
+})
 
 choreList.forEach(function (chore) {
     const li = document.createElement('li');
     li.textContent = `Chore: ${chore.name} - Assigned to: ${chore.assignee}`;
-    list.appendChild(li);
+    app.appendChild(li);
 });
 
 function addChore() {
@@ -21,7 +22,7 @@ function addChore() {
     }
     newLi.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
     choreList.push(newChore);
-    list.appendChild(newLi);
+    app.appendChild(newLi);
     return false;
 }
 
