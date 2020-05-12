@@ -1,6 +1,5 @@
 
-const choreList = [{ name: "Make Bed", assignee: "Kyle"}, { name: "Walk Dogs", assignee: "Kyle"},
-                    { name: "Clean Room", assignee: "Kyle"}, { name: "Empty Dishwasher", assignee: "Kyle"}];
+const choreList = [];
 
 const app = document.querySelector('.chore-list');
 
