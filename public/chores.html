@@ -33,14 +33,15 @@
     </div>
 </div>
 
-<div class="chore-form">
+<div class="chore-main">
     <div class="chore-header">
         <h1>Add A Chore</h1>
     </div>
-        <form name="chore" id="chore-form" onsubmit="return addChore()">
-        <input type="text" name="chore" id="chore" placeholder="What chore do you want to add?" />
-        <input type="text" name="assigned" id="assigned" placeholder="Who do you want assign this chore to?" />
-        <input type="submit" value="Submit" id="submit"/>
+        <form name="choreForm" id="chore-form" onsubmit="return addChore()">
+        <input type="text" name="chore" id="chore" placeholder="What chore do you want to add?" onkeyup="submitActive()"/>
+        <input type="text" name="assigned" id="assigned" placeholder="Who do you want assign this chore to?" onkeyup="submitActive()"/>
+        <span id="error" style="color:red"></span>
+        <input type="submit" value="Submit" id="submit" disabled/>
         <input type="button" id="clear" name=clear" value="Clear" onclick="clearFields(this.form)"/></button>
         </form>
 </div>
