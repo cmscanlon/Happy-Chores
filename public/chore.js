@@ -1,11 +1,30 @@
 
 const choreList = [];
-
 const app = document.querySelector('.chore-list');
+const chore = document.getElementById('chore');
+const assign = document.getElementById('assigned');
+const suButton = document.getElementById('submit');
 
 app.addEventListener('click', function(c) {
     this.removeChild(c.target);
 })
+
+function emptyFields() {
+    if (chore.value !== '' && assign.value !== '') {
+        return false;
+    }
+    return true;
+}
+
+function submitActive() {
+    if (emptyFields() === true) {
+      suButton.disabled = true;
+    return false;
+    } else {
+      suButton.disabled = false;
+     return true;
+  }
+}
 
 choreList.forEach(function (chore) {
     const li = document.createElement('li');
@@ -22,7 +41,7 @@ function addChore() {
     newLi.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
     choreList.push(newChore);
     app.appendChild(newLi);
-    return false;
+    return false; 
 }
 
 function clearFields() {
@@ -44,3 +63,14 @@ function clearFields() {
         }
     }
 }
+
+// function fieldValidation() {
+//     const error = document.getElementById('error');
+//     error.textContent = '';
+
+//         if (emptyFields() === true) {
+//             error.textContent = 'Cannot be blank.';
+//             return false;
+//         }
+//     return true;
+// }
