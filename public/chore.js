@@ -41,6 +41,7 @@ function addChore() {
     newLi.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
     choreList.push(newChore);
     app.appendChild(newLi);
+    clearFields();
     return false; 
 }
 
@@ -64,6 +65,25 @@ function clearFields() {
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // function fieldValidation() {
 //     const error = document.getElementById('error');
 //     error.textContent = '';
@@ -73,4 +93,4 @@ function clearFields() {
 //             return false;
 //         }
 //     return true;
-// }
+// 
