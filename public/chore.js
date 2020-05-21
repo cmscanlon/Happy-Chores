@@ -5,9 +5,11 @@ const chore = document.getElementById('chore');
 const assign = document.getElementById('assigned');
 const suButton = document.getElementById('submit');
 
-app.addEventListener('click', function(c) {
-    this.removeChild(c.target);
-})
+// app.addEventListener('click', function(c) {
+//     // this.removeChild(c.target);
+//     console.log(c.target);
+// })
+
 
 function emptyFields() {
     if (chore.value !== '' && assign.value !== '') {
@@ -33,17 +35,36 @@ choreList.forEach(function (chore) {
 });
 
 function addChore() {
+    const delbtn = document.createElement('input');
+    delbtn.setAttribute('type', 'button');
+    delbtn.setAttribute('class', 'delete');
+    delbtn.setAttribute('value', 'Delete');
+    delbtn.setAttribute('onclick', 'deleteChore(event)');
+
     const newLi = document.createElement('li');
+    newLi.setAttribute('class', 'chore-li');
+    newLi.setAttribute('id', 'chores')
     const newChore = {
         name: document.getElementById('chore').value,
         assignee: document.getElementById('assigned').value
     }
     newLi.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
+    
+    newLi.appendChild(delbtn);
     choreList.push(newChore);
     app.appendChild(newLi);
     clearFields();
     return false; 
 }
+
+function deleteChore(event) {
+    console.log(event.target.closest('li'));
+    const chores = document.getElementById('chores');
+    if (chores.parentNode) {
+        chores.parentNode.removeChild(event.target.closest('li'));
+    }
+}
+
 
 function clearFields() {
     const elements = document.getElementById('chore-form').elements;
