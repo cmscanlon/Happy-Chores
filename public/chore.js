@@ -35,11 +35,11 @@ choreList.forEach(function (chore) {
 });
 
 function addChore() {
-    const button = document.createElement('input');
-    button.setAttribute('type', 'button');
-    button.setAttribute('class', 'delete');
-    button.setAttribute('value', 'Delete');
-    button.setAttribute('onclick', 'deleteChore(event)');
+    const delbtn = document.createElement('input');
+    delbtn.setAttribute('type', 'button');
+    delbtn.setAttribute('class', 'delete');
+    delbtn.setAttribute('value', 'Delete');
+    delbtn.setAttribute('onclick', 'deleteChore(event)');
 
     const newLi = document.createElement('li');
     newLi.setAttribute('class', 'chore-li');
@@ -50,7 +50,7 @@ function addChore() {
     }
     newLi.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
     
-    newLi.appendChild(button);
+    newLi.appendChild(delbtn);
     choreList.push(newChore);
     app.appendChild(newLi);
     clearFields();
