@@ -104,6 +104,8 @@
     float: left;
 }
 
+
+
 /* Chore Form */
 
 .chore-main {
@@ -186,4 +188,33 @@
 
 .chore-main input[id='assigned'] {
     float: left;
+}
+
+/* .app {
+	display: table;
+	width: 100%;
+}
+
+.chore-list ul {
+	display: table-cell;
+	width: 1px;
+	white-space: nowrap;
+}
+
+.chore-list span {
+	display: table-cell;
+	padding: 0 0 0 5px;
+}
+
+.span delete {
+	width: 100%;
+} */
+
+.delete {
+	display: inline-block;
+}
+
+.chore-list li {
+	display: flex;
+	position: relative;
 }
