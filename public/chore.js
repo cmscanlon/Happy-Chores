@@ -5,11 +5,6 @@ const chore = document.getElementById('chore');
 const assign = document.getElementById('assigned');
 const suButton = document.getElementById('submit');
 
-// app.addEventListener('click', function(c) {
-//     // this.removeChild(c.target);
-//     console.log(c.target);
-// })
-
 
 function emptyFields() {
     if (chore.value !== '' && assign.value !== '') {
@@ -34,22 +29,29 @@ choreList.forEach(function (chore) {
     app.appendChild(li);
 });
 
+function setAttributes(elements, attributes) {
+    Object.keys(attributes).forEach(function(name) {
+        elements.setAttribute(name, attributes[name]);
+    })
+}
+
 function addChore() {
     const delbtn = document.createElement('input');
-    delbtn.setAttribute('type', 'button');
-    delbtn.setAttribute('class', 'delete');
-    delbtn.setAttribute('value', 'Delete');
-    delbtn.setAttribute('onclick', 'deleteChore(event)');
+    setAttributes(delbtn, {type: "button", class: 'delete', value: "Delete", onclick: 'deleteChore(event)'});
 
+    const editbtn = document.createElement('input');
+    setAttributes(editbtn, {type: 'button', class: 'edit', value: 'Edit', onclick: 'editChore(event)'});
+  
     const newLi = document.createElement('li');
-    newLi.setAttribute('class', 'chore-li');
-    newLi.setAttribute('id', 'chores')
+    setAttributes(newLi, {class: 'chore-li', id: 'chores'});
+
     const newChore = {
         name: document.getElementById('chore').value,
         assignee: document.getElementById('assigned').value
     }
     newLi.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
     
+    newLi.appendChild(editbtn);
     newLi.appendChild(delbtn);
     choreList.push(newChore);
     app.appendChild(newLi);
@@ -58,13 +60,19 @@ function addChore() {
 }
 
 function deleteChore(event) {
-    console.log(event.target.closest('li'));
+    // console.log(event.target.closest('li'));
     const chores = document.getElementById('chores');
     if (chores.parentNode) {
         chores.parentNode.removeChild(event.target.closest('li'));
     }
 }
 
+function editChore(event) {
+    // const chores = document.getElementById('chores');
+    const c = event.target.closest('li');
+    // console.log(event.target.closest('li'));
+    console.log(c.textContent);
+}
 
 function clearFields() {
     const elements = document.getElementById('chore-form').elements;
@@ -103,7 +111,10 @@ function clearFields() {
 
 
 
-
+// app.addEventListener('click', function(c) {
+//     // this.removeChild(c.target);
+//     console.log(c.target);
+// })
 
 // function fieldValidation() {
 //     const error = document.getElementById('error');
