@@ -37,10 +37,10 @@ function setAttributes(elements, attributes) {
 
 function addChore() {
     const delbtn = document.createElement('input');
-    setAttributes(delbtn, {type: "button", class: 'delete', value: "Delete", onclick: 'deleteChore(event)'});
+    setAttributes(delbtn, {type: 'image', src: 'img/close-outline.svg', class: 'delete', value: "Delete", onclick: 'deleteChore(event)'});
 
     const editbtn = document.createElement('input');
-    setAttributes(editbtn, {type: 'button', class: 'edit', value: 'Edit', onclick: 'editChore(event)'});
+    setAttributes(editbtn, {type: 'image', src: 'img/create-outline.svg', class: 'edit', value: 'Edit', onclick: 'editChore(event)'});
   
     const newLi = document.createElement('li');
     setAttributes(newLi, {class: 'chore-li', id: 'chores'});
