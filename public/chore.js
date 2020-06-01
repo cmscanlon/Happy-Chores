@@ -40,10 +40,20 @@ function addChore() {
     setAttributes(delbtn, {type: 'image', src: 'img/close-outline.svg', class: 'delete', value: "Delete", onclick: 'deleteChore(event)'});
 
     const editbtn = document.createElement('input');
-    setAttributes(editbtn, {type: 'image', src: 'img/create-outline.svg', class: 'edit', value: 'Edit', onclick: 'editChore(event)'});
+    setAttributes(editbtn, {type: 'image', src: 'img/create-outline.svg', class: 'edit', value: 'Edit', onclick: 'editMode(event)'});
   
     const newLi = document.createElement('li');
     setAttributes(newLi, {class: 'chore-li', id: 'chores'});
+
+    const readOnlyDiv = document.createElement('div');
+    setAttributes(readOnlyDiv, {class: 'div1', id: 'div1'});
+    const text1 = document.createTextNode('Read only');
+    readOnlyDiv.appendChild(text1);
+
+    const editModeDiv = document.createElement('div');
+    setAttributes(editModeDiv, {class: 'div2', id: 'div2'});
+    const text = document.createTextNode("We are in edit mode");
+    editModeDiv.appendChild(text);
 
     const newChore = {
         name: document.getElementById('chore').value,
@@ -53,9 +63,12 @@ function addChore() {
     
     newLi.appendChild(editbtn);
     newLi.appendChild(delbtn);
+    newLi.appendChild(readOnlyDiv);
+    newLi.appendChild(editModeDiv);
     choreList.push(newChore);
     app.appendChild(newLi);
     clearFields();
+    submitActive();
     return false; 
 }
 
@@ -68,10 +81,23 @@ function deleteChore(event) {
 }
 
 function editChore(event) {
-    // const chores = document.getElementById('chores');
     const c = event.target.closest('li');
-    // console.log(event.target.closest('li'));
     console.log(c.textContent);
+}
+
+function editMode(event) {
+    // const c = event.target.closest('li');
+    // console.log(c.textContent);
+    if (document.getElementById('div1')) {
+        if (document.getElementById('div1').style.display === 'none') {
+            document.getElementById('div1').style.display = 'block';
+            document.getElementById('div2').style.display = 'none';
+        }
+        else {
+            document.getElementById('div1').style.display = 'none';
+            document.getElementById('div2').style.display = 'block';
+        }
+    }
 }
 
 function clearFields() {

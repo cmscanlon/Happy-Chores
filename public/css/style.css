@@ -23,12 +23,12 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    max-height: 200px;
+    max-height: 100px;
 }
 
 .top-logo {
     grid-area: showcase;
-    min-height: 200px;
+    max-height: 10px;
     background: url(../img/pic4.jpg);
     background-size: cover;
     background-position: center;
@@ -46,7 +46,6 @@ img {
 .wrapper {
     display: grid;
     grid-gap: 20px;
-
 }
 
 .main-nav ul {

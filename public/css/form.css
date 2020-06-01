@@ -85,7 +85,6 @@
 .sign-up-form input[type="submit"]:disabled {
   background: var(--light);
   color: var(--primary);
-
 }
 
 .disabled {
@@ -193,6 +192,10 @@
 .chore-list li {
 	display: flex;
 	position: relative;
+}
+
+#div2 {
+	display: none;
 }
 
 /*  Buttons  */
