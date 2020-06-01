@@ -47,9 +47,7 @@ function addChore() {
 
     const readOnlyDiv = document.createElement('div');
     setAttributes(readOnlyDiv, {class: 'div1', id: 'div1'});
-    const text1 = document.createTextNode('Read only');
-    readOnlyDiv.appendChild(text1);
-
+    
     const editModeDiv = document.createElement('div');
     setAttributes(editModeDiv, {class: 'div2', id: 'div2'});
     const text = document.createTextNode("We are in edit mode");
@@ -59,10 +57,14 @@ function addChore() {
         name: document.getElementById('chore').value,
         assignee: document.getElementById('assigned').value
     }
-    newLi.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
-    
-    newLi.appendChild(editbtn);
-    newLi.appendChild(delbtn);
+    // newLi.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
+    const choreDescription = document.createElement('span');
+    choreDescription.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
+
+
+    readOnlyDiv.appendChild(choreDescription);
+    readOnlyDiv.appendChild(editbtn);
+    readOnlyDiv.appendChild(delbtn);
     newLi.appendChild(readOnlyDiv);
     newLi.appendChild(editModeDiv);
     choreList.push(newChore);
@@ -86,18 +88,13 @@ function editChore(event) {
 }
 
 function editMode(event) {
-    // const c = event.target.closest('li');
-    // console.log(c.textContent);
-    if (document.getElementById('div1')) {
-        if (document.getElementById('div1').style.display === 'none') {
-            document.getElementById('div1').style.display = 'block';
-            document.getElementById('div2').style.display = 'none';
-        }
-        else {
-            document.getElementById('div1').style.display = 'none';
-            document.getElementById('div2').style.display = 'block';
-        }
-    }
+    console.log(event.target.closest('.div1'));
+    const read = event.target.closest('.div1');
+    const edit = event.target.closest('li').querySelector('.div2');
+    console.log(event.target.closest('li').querySelector('.div2'));
+    read.style.display = 'none';
+    edit.style.display = 'block';
+   
 }
 
 function clearFields() {
