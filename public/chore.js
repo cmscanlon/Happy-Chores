@@ -50,23 +50,32 @@ function addChore() {
     
     const editModeDiv = document.createElement('div');
     setAttributes(editModeDiv, {class: 'div2', id: 'div2'});
-    const text = document.createTextNode("We are in edit mode");
-    editModeDiv.appendChild(text);
+    // const text = document.createTextNode('Now in edit mode!');
+    // editModeDiv.appendChild(text);
 
+    const editInput1 = document.createElement('input');
+    setAttributes(editInput1, {class: 'edit', id: 'edit', value: 'Maybe'});
+    // const editText = document.createTextNode('Is this working');
+    // editInput.appendChild(editText);
+
+    const editInput2 = document.createElement('input');
+    setAttributes(editInput2, {class: 'edit2', id: 'edit2', value: 'Yes!'});
+    
     const newChore = {
         name: document.getElementById('chore').value,
         assignee: document.getElementById('assigned').value
     }
-    // newLi.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
+
     const choreDescription = document.createElement('span');
     choreDescription.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
-
 
     readOnlyDiv.appendChild(choreDescription);
     readOnlyDiv.appendChild(editbtn);
     readOnlyDiv.appendChild(delbtn);
     newLi.appendChild(readOnlyDiv);
     newLi.appendChild(editModeDiv);
+    editModeDiv.appendChild(editInput1);
+    editModeDiv.appendChild(editInput2);
     choreList.push(newChore);
     app.appendChild(newLi);
     clearFields();
@@ -75,26 +84,19 @@ function addChore() {
 }
 
 function deleteChore(event) {
-    // console.log(event.target.closest('li'));
     const chores = document.getElementById('chores');
     if (chores.parentNode) {
         chores.parentNode.removeChild(event.target.closest('li'));
     }
 }
 
-function editChore(event) {
-    const c = event.target.closest('li');
-    console.log(c.textContent);
-}
-
 function editMode(event) {
-    console.log(event.target.closest('.div1'));
+    // console.log(event.target.closest('.div1'));
     const read = event.target.closest('.div1');
     const edit = event.target.closest('li').querySelector('.div2');
-    console.log(event.target.closest('li').querySelector('.div2'));
+    // console.log(event.target.closest('li').querySelector('.div2'));
     read.style.display = 'none';
-    edit.style.display = 'block';
-   
+    edit.style.display = 'block'; 
 }
 
 function clearFields() {
@@ -138,6 +140,11 @@ function clearFields() {
 //     // this.removeChild(c.target);
 //     console.log(c.target);
 // })
+
+// function editChore(event) {
+//     const c = event.target.closest('li');
+//     console.log(c.textContent);
+// }
 
 // function fieldValidation() {
 //     const error = document.getElementById('error');

@@ -70,7 +70,7 @@
 
 .sign-up-form input[type='checkbox'] {
     float: left;
-  width: 20px;
+  	width: 20px;
 }
 
 .sign-up-form input[type='checkbox'] + label {
@@ -196,6 +196,17 @@
 
 .div2 {
 	display: none;
+}
+
+.chore-list input[id='edit'] {
+	width: 150px;
+	height: 35px;
+
+}
+
+.chore-list input[id='edit2'] {
+	width: 200px;
+	height: 35px;
 }
 
 /*  Buttons  */
