@@ -52,14 +52,6 @@ function addChore() {
     setAttributes(editModeDiv, {class: 'div2', id: 'div2'});
     // const text = document.createTextNode('Now in edit mode!');
     // editModeDiv.appendChild(text);
-
-    const editInput1 = document.createElement('input');
-    setAttributes(editInput1, {class: 'edit', id: 'edit', value: 'Maybe'});
-    // const editText = document.createTextNode('Is this working');
-    // editInput.appendChild(editText);
-
-    const editInput2 = document.createElement('input');
-    setAttributes(editInput2, {class: 'edit2', id: 'edit2', value: 'Yes!'});
     
     const newChore = {
         name: document.getElementById('chore').value,
@@ -68,6 +60,12 @@ function addChore() {
 
     const choreDescription = document.createElement('span');
     choreDescription.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
+
+    const editInput1 = document.createElement('input');
+    setAttributes(editInput1, {class: 'edit', id: 'edit', value: `${newChore.name}` });
+
+    const editInput2 = document.createElement('input');
+    setAttributes(editInput2, {class: 'edit2', id: 'edit2', value: `${newChore.assignee}`});
 
     readOnlyDiv.appendChild(choreDescription);
     readOnlyDiv.appendChild(editbtn);
