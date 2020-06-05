@@ -1,5 +1,5 @@
 
-/* Form Style */
+/* Sign Up Form Style */
 
 .sign-up-form {
 	font: 95% Arial, Helvetica, sans-serif;
@@ -216,10 +216,22 @@
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	padding: 0 2.5px 5px;
+	padding: 0 10px 2.5px;
 }
 
-.edit {
+.editbtn {
+	width: 20px;
+	height: 20px;
+	padding: 0 10px 2.5px;
+}
+
+.save {
+	width: 20px;
+	height: 20px;
+	padding: 0 10px 2.5px;
+}
+
+.cancel {
 	width: 20px;
 	height: 20px;
 	padding: 0 10px 2.5px;

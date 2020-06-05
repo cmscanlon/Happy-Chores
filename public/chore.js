@@ -5,7 +5,6 @@ const chore = document.getElementById('chore');
 const assign = document.getElementById('assigned');
 const suButton = document.getElementById('submit');
 
-
 function emptyFields() {
     if (chore.value !== '' && assign.value !== '') {
         return false;
@@ -37,10 +36,10 @@ function setAttributes(elements, attributes) {
 
 function addChore() {
     const delbtn = document.createElement('input');
-    setAttributes(delbtn, {type: 'image', src: 'img/close-outline.svg', class: 'delete', value: "Delete", onclick: 'deleteChore(event)'});
+    setAttributes(delbtn, {type: 'image', src: 'img/trash-outline.svg', class: 'delete', value: "Delete", onclick: 'deleteChore(event)'});
 
     const editbtn = document.createElement('input');
-    setAttributes(editbtn, {type: 'image', src: 'img/create-outline.svg', class: 'edit', value: 'Edit', onclick: 'editMode(event)'});
+    setAttributes(editbtn, {type: 'image', src: 'img/create-outline.svg', class: 'editbtn', value: 'Edit', onclick: 'editMode(event)'});
   
     const newLi = document.createElement('li');
     setAttributes(newLi, {class: 'chore-li', id: 'chores'});
@@ -50,8 +49,6 @@ function addChore() {
     
     const editModeDiv = document.createElement('div');
     setAttributes(editModeDiv, {class: 'div2', id: 'div2'});
-    // const text = document.createTextNode('Now in edit mode!');
-    // editModeDiv.appendChild(text);
     
     const newChore = {
         name: document.getElementById('chore').value,
@@ -62,10 +59,16 @@ function addChore() {
     choreDescription.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
 
     const editInput1 = document.createElement('input');
-    setAttributes(editInput1, {class: 'edit', id: 'edit', value: `${newChore.name}` });
+    setAttributes(editInput1, {class: 'edit', id: 'edit', type: 'text', value: `${newChore.name}` });
 
     const editInput2 = document.createElement('input');
-    setAttributes(editInput2, {class: 'edit2', id: 'edit2', value: `${newChore.assignee}`});
+    setAttributes(editInput2, {class: 'edit2', id: 'edit2', type: 'text', value: `${newChore.assignee}`});
+
+    const cancelbtn = document.createElement('input');
+    setAttributes(cancelbtn, {type: 'image', src: 'img/close-outline.svg', class: 'cancel', onclick: 'cancelEdit(event)'});
+
+    const savebtn = document.createElement('input');
+    setAttributes(savebtn, {type: 'image', src: 'img/checkmark-outline.svg', class: 'save', onclick: 'editChore(event)'});
 
     readOnlyDiv.appendChild(choreDescription);
     readOnlyDiv.appendChild(editbtn);
@@ -74,6 +77,8 @@ function addChore() {
     newLi.appendChild(editModeDiv);
     editModeDiv.appendChild(editInput1);
     editModeDiv.appendChild(editInput2);
+    editModeDiv.appendChild(cancelbtn);
+    editModeDiv.appendChild(savebtn);
     choreList.push(newChore);
     app.appendChild(newLi);
     clearFields();
@@ -95,6 +100,30 @@ function editMode(event) {
     // console.log(event.target.closest('li').querySelector('.div2'));
     read.style.display = 'none';
     edit.style.display = 'block'; 
+}
+
+function cancelEdit(event) {
+    const read = event.target.closest('li').querySelector('.div1');
+    const edit = event.target.closest('li').querySelector('.div2');
+    // console.log(event.target.closest('li').querySelector('.div2'));
+    read.style.display = 'block';
+    edit.style.display = 'none'; 
+}
+
+function editChore(event) {
+    const newEditChore = {
+        editName: event.target.closest('li').querySelector('.edit').value,
+        editAssignee: event.target.closest('li').querySelector('.edit2').value
+    }
+    console.log(newEditChore);
+    const read = event.target.closest('li').querySelector('.div1');
+    const edit = event.target.closest('li').querySelector('.div2');
+    read.style.display = 'block';
+    edit.style.display = 'none'; 
+
+    const editDescription = event.target.closest('li').querySelector('span');
+    editDescription.textContent = `Chore: ${newEditChore.editName} - Assigned to: ${newEditChore.editAssignee}`;
+    choreList.push(newEditChore);
 }
 
 function clearFields() {
