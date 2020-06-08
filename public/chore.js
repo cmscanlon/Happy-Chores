@@ -77,8 +77,8 @@ function addChore() {
     newLi.appendChild(editModeDiv);
     editModeDiv.appendChild(editInput1);
     editModeDiv.appendChild(editInput2);
-    editModeDiv.appendChild(cancelbtn);
     editModeDiv.appendChild(savebtn);
+    editModeDiv.appendChild(cancelbtn);
     choreList.push(newChore);
     app.appendChild(newLi);
     clearFields();
@@ -94,10 +94,8 @@ function deleteChore(event) {
 }
 
 function editMode(event) {
-    // console.log(event.target.closest('.div1'));
     const read = event.target.closest('.div1');
     const edit = event.target.closest('li').querySelector('.div2');
-    // console.log(event.target.closest('li').querySelector('.div2'));
     read.style.display = 'none';
     edit.style.display = 'block'; 
 }
@@ -105,7 +103,6 @@ function editMode(event) {
 function cancelEdit(event) {
     const read = event.target.closest('li').querySelector('.div1');
     const edit = event.target.closest('li').querySelector('.div2');
-    // console.log(event.target.closest('li').querySelector('.div2'));
     read.style.display = 'block';
     edit.style.display = 'none'; 
 }
