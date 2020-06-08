@@ -216,23 +216,23 @@
 	display: inline-block;
 	width: 20px;
 	height: 20px;
-	padding: 0 10px 2.5px;
+	padding: 0 10px;
 }
 
 .editbtn {
 	width: 20px;
 	height: 20px;
-	padding: 0 10px 2.5px;
+	padding: 0 0 0 50px;
 }
 
 .save {
 	width: 20px;
 	height: 20px;
-	padding: 0 10px 2.5px;
+	padding: 0 5px;
 }
 
 .cancel {
 	width: 20px;
 	height: 20px;
-	padding: 0 10px 2.5px;
+	padding: 0 10px;
 }
