@@ -29,7 +29,8 @@
         <h1>Chore List</h1>
     </div>
     <div id="app" class="app">
-        <ul class="chore-list"></ul>
+        <ul class="chore-list"> 
+    </ul>
     </div>
 </div>
 
@@ -37,13 +38,13 @@
     <div class="chore-header">
         <h1>Add A Chore</h1>
     </div>
-        <form name="choreForm" id="chore-form" onsubmit="return addChore()">
+        <form name="choreForm" id="chore-form" onsubmit="return addChore()" autocomplete="on">
         <input type="text" name="chore" id="chore" placeholder="What chore do you want to add?" onkeyup="submitActive()"/>
         <input type="text" name="assigned" id="assigned" placeholder="Who do you want assign this chore to?" onkeyup="submitActive()"/>
         <span id="error" style="color:red"></span>
         <input type="submit" value="Submit" id="submit" disabled/>
         <input type="button" id="clear" name=clear" value="Clear" onclick="clearFields(this.form)" /></button>
-        </form>
+    </form>
 </div>
 
 
