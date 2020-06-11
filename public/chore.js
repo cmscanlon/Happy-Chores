@@ -68,7 +68,7 @@ function addChore() {
     setAttributes(cancelbtn, {type: 'image', src: 'img/close-outline.svg', class: 'cancel', onclick: 'cancelEdit(event)'});
 
     const savebtn = document.createElement('input');
-    setAttributes(savebtn, {type: 'image', src: 'img/checkmark-outline.svg', class: 'save', onclick: 'editChore(event)'});
+    setAttributes(savebtn, {type: 'image', src: 'img/checkmark-outline.svg', class: 'save', onclick: 'saveChore(event)'});
 
     readOnlyDiv.appendChild(choreDescription);
     readOnlyDiv.appendChild(editbtn);
@@ -107,17 +107,12 @@ function cancelEdit(event) {
     edit.style.display = 'none'; 
 }
 
-function editChore(event) {
+function saveChore(event) {
     const newEditChore = {
         editName: event.target.closest('li').querySelector('.edit').value,
         editAssignee: event.target.closest('li').querySelector('.edit2').value
     }
-    console.log(newEditChore);
-    const read = event.target.closest('li').querySelector('.div1');
-    const edit = event.target.closest('li').querySelector('.div2');
-    read.style.display = 'block';
-    edit.style.display = 'none'; 
-
+    cancelEdit(event);
     const editDescription = event.target.closest('li').querySelector('span');
     editDescription.textContent = `Chore: ${newEditChore.editName} - Assigned to: ${newEditChore.editAssignee}`;
     choreList.push(newEditChore);
