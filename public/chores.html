@@ -21,32 +21,64 @@
 </head>
 
 <body> 
-
-<div class="chore">
-    <div class="chore-list-header">
-        <h1>Chore List</h1>
-    </div>
-    <div id="app" class="app">
-        <ul class="chore-list"> 
-    </ul>
-    </div>
+<div class="tab">
+    <button class="tablinks" onclick="switchPage(event, 'choreTab')">Add a Chore</button>
+    <button class="tablinks" id="defaultOpen" onclick="switchPage(event, 'familyTab')">Add a Family</button>
 </div>
 
-<div class="chore-main">
-    <div class="chore-header">
-        <h1>Add A Chore</h1>
+<div id="choreTab" class="tabcontent">
+    <div class="chore">
+        <div class="chore-list-header">
+            <h1>Chore List</h1>
+        </div>
+        <div id="app" class="app">
+            <ul class="chore-list"> 
+        </ul>
+        </div>
     </div>
-        <form name="choreForm" id="chore-form" onsubmit="return addChore()" autocomplete="on">
-        <input type="text" name="chore" id="chore" placeholder="What chore do you want to add?" onkeyup="submitActive()"/>
-        <input type="text" name="assigned" id="assigned" placeholder="Who do you want assign this chore to?" onkeyup="submitActive()"/>
-        <span id="error" style="color:red"></span>
-        <input type="submit" value="Submit" id="submit" disabled/>
-        <input type="button" id="clear" name=clear" value="Clear" onclick="clearFields(this.form)" /></button>
-    </form>
-</div>
 
-
-
+    <div class="chore-main">
+        <div class="chore-header">
+            <h1>Add A Chore</h1>
+        </div>
+            <form name="choreForm" id="chore-form" onsubmit="return addChore()" autocomplete="on">
+            <input type="text" name="chore" id="chore" placeholder="What chore do you want to add?" onkeyup="submitActive()"/>
+            <input type="text" name="assigned" id="assigned" placeholder="Who do you want assign this chore to?" onkeyup="submitActive()"/>
+            <input type="select">
+            <span id="error" style="color:red"></span>
+            <input type="submit" value="Submit" id="submit" disabled/>
+            <input type="button" id="clear" name=clear" value="Clear" onclick="clearFields(this.form)"/></button>
+        </form>
+    </div>
 <script src="chore.js"></script>
+</div>
+
+<div id="familyTab" class="tabcontent">
+    <div class="register-form">
+        <div class="family">
+            <div class="family-list-header">
+                <h1>Family</h1>
+            </div>
+            <div id="fam" class="fam">
+                <ul class="family-list"> 
+            </ul>
+        </div>
+    
+    <div class="register-main">
+        <div class="register-header">
+            <h1>Add A Family Member</h1>
+        </div>
+        <form name="registerForm" id='registerForm' onsubmit="return addFamilyMember()"/>
+            <input type="text" name="fname" id="fname" placeholder="First Name" onkeyup="submitButtonActive()" />
+            <input type="submit" value="Add" id="familySubmit" disabled />
+        </form>
+    </div>
+    </div>
+    
+    <script src="register.js"></script>
+    </div>
+
+<script src="tabs.js"></script>
+
 </body>
 </html>

@@ -22,39 +22,35 @@
 
 <body>
 
+<div class="tab">
+    <button class="tablinks" onclick="switchPage(event, 'choreTab')">Add a Chore</button>
+    <button class="tablinks" onclick="switchPage(event, 'familyTab')">Add a Family</button>
+</div>    
+
+<div id="familyTab" class="tabconten">
 <div class="register-form">
     <div class="family">
         <div class="family-list-header">
-            <h1>Adding Family Members</h1>
+            <h1>Family</h1>
         </div>
         <div id="fam" class="fam">
             <ul class="family-list"> 
         </ul>
-        </div>
     </div>
 
-<div class="parent-main">
-    <div class="parent-header">
-        <h1>Parent(s)</h1>
+<div class="register-main">
+    <div class="register-header">
+        <h1>Add A Family Member</h1>
     </div>
-    <form name="parentForm" id='parentForm' onsubmit="return addParent()"/>
-        <input type="text" name="pfname" id="pfname" placeholder="Parent First Name" onkeyup='submitActive()' />
-        <input type="text" name="email" id="email" placeholder="Email Address" onkeyup="submitActive()" />
-        <input type="submit" value="Add" id="parentSubmit" disabled />
-    </form>
-<div class="child-main">
-    <div class="child-header">
-        <h1>Children</h1>
-    </div>
-    <form name='childForm' id='childForm' onsubmit="return addChildren()"/> 
-        <input type='text' name='cfname' id='cfname' placeholder='Child's First Name' onkeyup='submitChildActive()'/> 
-        <input type='text' name='cemail' id='cemail' placeholder='Email Address' onkeyup='submitChildActive()' />
-        <input type='submit' value='Add' id='childSubmit' disabled />
+    <form name="registerForm" id='registerForm' onsubmit="return addFamilyMember()"/>
+        <input type="text" name="fname" id="fname" placeholder="First Name" onkeyup="submitActive()" />
+        <input type="submit" value="Add" id="familySubmit" disabled />
     </form>
 </div>
 </div>
 
 <script src="register.js"></script>
+</div>
 </body>
 
 

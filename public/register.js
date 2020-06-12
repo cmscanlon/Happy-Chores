@@ -1,127 +1,68 @@
 const familyList = [];
 const fam = document.querySelector('.family-list');
-const parentName = document.getElementById('pfname');
-const parentEmail = document.getElementById('email');
-const suButton = document.getElementById('parentSubmit');
-const childName = document.getElementById('cfname');
-const childEmail = document.getElementById('cemail');
-const suChildButton = document.getElementById('childSubmit');
+const firstName = document.getElementById('fname');
+const subFamButton = document.getElementById('familySubmit');
 
 function emptyFields() {
-    if (parentName.value !== '' && parentEmail.value !== '') {
+    if (firstName.value !== '') {
         return false;
     }
     return true;
 }
 
-function submitActive() {
+function submitButtonActive() {
     if (emptyFields() === true) {
-      suButton.disabled = true;
+      subFamButton.disabled = true;
     return false;
     } else {
-      suButton.disabled = false;
+      subFamButton.disabled = false;
      return true;
   }
 }
-
-familyList.forEach(function (parent) {
-    const li = document.createElement('li');
-    li.textContent = `${parent.name} ${parent.email}`;
-    fam.appendChild(li);
-});
-
 function setAttributes(elements, attributes) {
     Object.keys(attributes).forEach(function(name) {
         elements.setAttribute(name, attributes[name]);
     })
 }
 
-function addParent() {
-    const delbtn = document.createElement('input');
-    setAttributes(delbtn, {type: 'image', src: 'img/trash-outline.svg', class: 'delete', value: "Delete"});
+function addFamilyMember() {
+    const familyDiv = document.createElement('div');
+    setAttributes(familyDiv, {class: 'family', id: 'family'});
 
-    const parentLi = document.createElement('li');
-    setAttributes(parentLi, {class: 'parent-li', id: 'parent'});
+    const choreDiv = document.createElement('div');
+    setAttributes(choreDiv, {class: 'choreDiv', id: 'choreDiv'});
+
+    const delbtn = document.createElement('input');
+    setAttributes(delbtn, {type: 'image', src: 'img/trash-outline.svg', class: 'delete', value: "Delete", onclick: 'deleteFamilyMember(event)' });
+
+    const familyLi = document.createElement('li');
+    setAttributes(familyLi, {class: 'family-li', id: 'familyLi'});
     
-    const newParent = {
-        name: document.getElementById('pfname').value,
-        email: document.getElementById('email').value
+    const newFamilyMember = {
+        name: document.getElementById('fname').value
     }
 
-    const parentInfo = document.createElement('span');
-    parentInfo.textContent = `${newParent.name} - ${newParent.email}`;
-
-    fam.appendChild(parentLi);
-    familyList.push(newParent);
-    parentLi.appendChild(parentInfo);
-    parentLi.appendChild(delbtn);
-    clearFields();
+    const familyInfo = document.createElement('span');
+    familyInfo.textContent = `${newFamilyMember.name}` ;
+    
+    fam.appendChild(familyLi);
+    familyList.push(newFamilyMember);
+    familyLi.appendChild(familyInfo);
+    familyLi.appendChild(delbtn);
+    clearFamFields();
+    submitButtonActive();
     return false;
 }
 
-function clearFields() {
-    const elements = document.getElementById('parentForm').elements;
-
-    for (i = 0; i < elements.length; i++) {
-        fieldType = elements[i].type.toLowerCase();
-        switch (fieldType) {
-        case 'text':
-            elements[i].value = '';
-            break;
-        case 'checkbox':
-            if (elements[i].checked) {
-                elements[i].checked = false;
-            }
-            break
-        default:
-            break;
-        }
+function deleteFamilyMember(event) {
+    const family = document.getElementById('familyLi');
+    if (family.parentNode) {
+        family.parentNode.removeChild(event.target.closest('li'));
     }
 }
 
-
-
-function emptyChildFields() {
-    if (childName.value !== '' && childEmail.value !== '') {
-        return false;
-    }
-    return true;
-}
-
-function submitChildActive() {
-    if (emptyChildFields() === true) {
-      suChildButton.disabled = true;
-    return false;
-    } else {
-      suChildButton.disabled = false;
-     return true;
-  }
-}
-
-function addChildren() {
-    const delbtn = document.createElement('input');
-    setAttributes(delbtn, {type: 'image', src: 'img/trash-outline.svg', class: 'delete', value: 'Delete'});
-
-    const childLi = document.createElement('li');
-    setAttributes(childLi, {class: 'childLi', id: child});
-
-    const newChild = {
-        name: document.getElementById('cfname').value,
-        email: document.getElementById('cemail').value
-    }
-
-    const childInfo = document.createElement('span');
-    childInfo.textContent = `${newChild.name} - ${newChild.email}`;
-
-    fam.appendChild(childLi);
-    familyList.push(newChild);
-    childLi.appendChild(childInfo);
-    clearChildFields();
-    return false;
-}
-
-function clearChildFields() {
-    const elements = document.getElementById('childForm').elements;
+function clearFamFields() {
+    const elements = document.getElementById('registerForm').elements;
 
     for (i = 0; i < elements.length; i++) {
         fieldType = elements[i].type.toLowerCase();
