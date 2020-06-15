@@ -3,7 +3,7 @@ const fam = document.querySelector('.family-list');
 const firstName = document.getElementById('fname');
 const subFamButton = document.getElementById('familySubmit');
 
-function emptyFields() {
+function emptyFamFields() {
     if (firstName.value !== '') {
         return false;
     }
