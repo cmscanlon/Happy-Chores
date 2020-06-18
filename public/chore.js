@@ -2,11 +2,11 @@
 const choreList = [];
 const app = document.querySelector('.chore-list');
 const chore = document.getElementById('chore');
-const assign = document.getElementById('assigned');
+const assign = document.getElementById('famMembers');
 const suButton = document.getElementById('submit');
 
 function emptyFields() {
-    if (chore.value !== '' && assign.value !== '') {
+    if (chore.value !== '' && famMembers.value !== '' ) {
         return false;
     }
     return true;
@@ -52,7 +52,7 @@ function addChore() {
     
     const newChore = {
         name: document.getElementById('chore').value,
-        assignee: document.getElementById('assigned').value
+        assignee: document.getElementById('famMembers').value
     }
 
     const choreDescription = document.createElement('span');
@@ -131,12 +131,17 @@ function clearFields() {
             if (elements[i].checked) {
                 elements[i].checked = false;
             }
-            break
+            break;
+        case "select-one":
+        case "select-multi":
+            elements[i].selectedIndex = -1;
+            break;
         default:
             break;
+            }
         }
     }
-}
+
 
 
 

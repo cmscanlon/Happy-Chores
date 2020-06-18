@@ -22,8 +22,8 @@
 
 <body> 
 <div class="tab">
-    <button class="tablinks" onclick="switchPage(event, 'choreTab')">Add a Chore</button>
-    <button class="tablinks" id="defaultOpen" onclick="switchPage(event, 'familyTab')">Add a Family</button>
+    <button class="tablinks" id="defaultOpen" onclick="switchPage(event, 'choreTab')">Add a Chore</button>
+    <button class="tablinks" onclick="switchPage(event, 'familyTab')">Add a Family</button>
 </div>
 
 <div id="choreTab" class="tabcontent">
@@ -43,8 +43,16 @@
         </div>
             <form name="choreForm" id="chore-form" onsubmit="return addChore()" autocomplete="on">
             <input type="text" name="chore" id="chore" placeholder="What chore do you want to add?" onkeyup="submitActive()"/>
-            <input type="text" name="assigned" id="assigned" placeholder="Who do you want assign this chore to?" onkeyup="submitActive()"/>
-            <!-- <input type="select"> -->
+            <!-- <input type="text" name="assigned" id="assigned" placeholder="Who do you want assign this chore to?" onkeyup="submitActive()"/> -->
+            <label for "familyMembers" placeholder="Who do you want to assign this chore to?">Who do you want to assign this chore to?</label>
+            <select name="famMembers" id="famMembers">
+                <!-- <option value="default"></option>
+                <option value="Kyle">Kyle</option>
+                <option value="Carolyn">Carolyn</option>
+                <option value="Avery">Avery</option>
+                <option value="Owen">Owen</option>
+                <option value="Stella">Stella</option> -->
+            </select>
             <span id="error" style="color:red"></span>
             <input type="submit" value="Submit" id="submit" disabled/>
             <input type="button" id="clear" name=clear" value="Clear" onclick="clearFields(this.form)"/></button>

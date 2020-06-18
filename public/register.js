@@ -2,6 +2,7 @@ const familyList = [];
 const fam = document.querySelector('.family-list');
 const firstName = document.getElementById('fname');
 const subFamButton = document.getElementById('familySubmit');
+const familyMemberAdd = document.getElementById('famMembers');
 
 function emptyFamFields() {
     if (firstName.value !== '') {
@@ -11,7 +12,7 @@ function emptyFamFields() {
 }
 
 function submitButtonActive() {
-    if (emptyFields() === true) {
+    if (emptyFamFields() === true) {
       subFamButton.disabled = true;
     return false;
     } else {
@@ -43,7 +44,13 @@ function addFamilyMember() {
     }
 
     const familyInfo = document.createElement('span');
-    familyInfo.textContent = `${newFamilyMember.name}` ;
+    setAttributes(familyInfo, {name: 'familyInfo', id: 'familyInfo'});
+    familyInfo.textContent = `${newFamilyMember.name}`;
+
+    const famValues = document.createElement('option');
+    famValues.text = `${newFamilyMember.name}`;
+    
+    familyMemberAdd.add(famValues);
     
     fam.appendChild(familyLi);
     familyList.push(newFamilyMember);
@@ -74,7 +81,11 @@ function clearFamFields() {
             if (elements[i].checked) {
                 elements[i].checked = false;
             }
-            break
+            break;
+        case "select-one":
+        case "select-multi":
+            elements[i].selectedIndex = -1;
+            break;
         default:
             break;
         }
