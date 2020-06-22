@@ -2,11 +2,11 @@
 const choreList = [];
 const app = document.querySelector('.chore-list');
 const chore = document.getElementById('chore');
-const assign = document.getElementById('assigned');
+const assign = document.getElementById('famMembers');
 const suButton = document.getElementById('submit');
 
 function emptyFields() {
-    if (chore.value !== '' && assign.value !== '') {
+    if (chore.value !== '' && famMembers.value !== '' ) {
         return false;
     }
     return true;
@@ -52,7 +52,7 @@ function addChore() {
     
     const newChore = {
         name: document.getElementById('chore').value,
-        assignee: document.getElementById('assigned').value
+        assignee: document.getElementById('famMembers').value
     }
 
     const choreDescription = document.createElement('span');
@@ -68,7 +68,7 @@ function addChore() {
     setAttributes(cancelbtn, {type: 'image', src: 'img/close-outline.svg', class: 'cancel', onclick: 'cancelEdit(event)'});
 
     const savebtn = document.createElement('input');
-    setAttributes(savebtn, {type: 'image', src: 'img/checkmark-outline.svg', class: 'save', onclick: 'editChore(event)'});
+    setAttributes(savebtn, {type: 'image', src: 'img/checkmark-outline.svg', class: 'save', onclick: 'saveChore(event)'});
 
     readOnlyDiv.appendChild(choreDescription);
     readOnlyDiv.appendChild(editbtn);
@@ -107,17 +107,12 @@ function cancelEdit(event) {
     edit.style.display = 'none'; 
 }
 
-function editChore(event) {
+function saveChore(event) {
     const newEditChore = {
         editName: event.target.closest('li').querySelector('.edit').value,
         editAssignee: event.target.closest('li').querySelector('.edit2').value
     }
-    console.log(newEditChore);
-    const read = event.target.closest('li').querySelector('.div1');
-    const edit = event.target.closest('li').querySelector('.div2');
-    read.style.display = 'block';
-    edit.style.display = 'none'; 
-
+    cancelEdit(event);
     const editDescription = event.target.closest('li').querySelector('span');
     editDescription.textContent = `Chore: ${newEditChore.editName} - Assigned to: ${newEditChore.editAssignee}`;
     choreList.push(newEditChore);
@@ -136,12 +131,17 @@ function clearFields() {
             if (elements[i].checked) {
                 elements[i].checked = false;
             }
-            break
+            break;
+        case "select-one":
+        // case "select-multi":
+            // elements[i].selectedIndex = -1;
+            break;
         default:
             break;
+            }
         }
     }
-}
+
 
 
 
