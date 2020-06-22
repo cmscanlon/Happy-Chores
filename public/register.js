@@ -36,18 +36,19 @@ function addFamilyMember() {
     const delbtn = document.createElement('input');
     setAttributes(delbtn, {type: 'image', src: 'img/trash-outline.svg', class: 'delete', value: "Delete", onclick: 'deleteFamilyMember(event)' });
 
-    const familyLi = document.createElement('li');
-    setAttributes(familyLi, {class: 'family-li', id: 'familyLi'});
-    
     const newFamilyMember = {
         name: document.getElementById('fname').value
     }
-
+    const familyLi = document.createElement('li');
+    console.log(familyLi);
+    setAttributes(familyLi, {class: 'family-li', id: `${newFamilyMember.name}` });
+    
     const familyInfo = document.createElement('span');
     setAttributes(familyInfo, {name: 'familyInfo', id: 'familyInfo'});
     familyInfo.textContent = `${newFamilyMember.name}`;
 
     const famValues = document.createElement('option');
+    setAttributes(famValues, {id: `${newFamilyMember.name}`});
     famValues.text = `${newFamilyMember.name}`;
     
     familyMemberAdd.add(famValues);
@@ -58,14 +59,17 @@ function addFamilyMember() {
     familyLi.appendChild(delbtn);
     clearFamFields();
     submitButtonActive();
+                                                            
     return false;
 }
 
 function deleteFamilyMember(event) {
-    const family = document.getElementById('familyLi');
-    if (family.parentNode) {
-        family.parentNode.removeChild(event.target.closest('li'));
-    }
+    const family = document.getElementById('family-list');
+    family.removeChild(event.target.closest('li'));
+
+    const delFamily = document.getElementById('famMembers');
+    const memberToDelete = document.getElementById(event.target.closest('li').id);
+        delFamily.removeChild(memberToDelete);
 }
 
 function clearFamFields() {
