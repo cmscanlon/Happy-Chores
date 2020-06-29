@@ -1,0 +1,121 @@
+:root {
+    --primary: #EFF4F8;
+    --highlight: #fff;
+    --button: #2757FF;
+    --text: rgba(0,0,0,0.6);
+
+}
+
+html {
+    font-family: "Proxima Nova Regula";
+    background: var(--primary);
+}
+
+head {
+    background: var(--highlight);
+}
+
+body {
+    background: var(--primary);
+    
+}
+
+.chore-nav {
+    display: flex;
+}
+
+.top-logo {
+    
+}
+
+.logo {
+    width: 237px;
+    height: 62px;
+    margin-top: 57px;
+}
+
+.white-nav {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    height: 1024px;
+    background-color: var(--highlight);
+    align-content: space-around;
+    align-items: center;
+    /* justify-content: center;  */
+}
+
+.chore-nav {
+    font-family: 'Proxima Nova Regular';
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 80px;
+
+}
+
+.chore-nav-header h1 {
+    text-align: center;
+    font-size: 16px;
+}
+
+.chore-nav-rooms ul {
+    font-family: 'Proxima Nova Regular';
+    list-style: none;
+    color: rgba(0,0,0,0.6);
+    font-size: 16px;
+    margin-top: 34px;
+}
+
+.chore-nav-rooms li {
+    margin-bottom: 29px;
+}
+
+.chore-nav-rooms li a {
+    color: #2B2826;
+    text-decoration: none;
+}
+
+.chore-nav-rooms ul li {
+    padding: 20px, 0px;
+}
+
+.chore-nav-rooms li:hover {
+    width: 40%;
+    border-bottom: 3px solid rgba(0,0,0,0.6);
+    font-family: 'Proxima Nova Bold';
+}
+
+@font-face {
+    font-family: 'Proxima Nova Regular';
+    src: url('fonts/Proxima Nova Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Bold';
+    src: url('fonts/Proxima Nova Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Light';
+    src: url('fonts/Proxima Nova Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Proxima Nova Thin';
+    src: url('fonts/Proxima Nova Thin.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Promixa Nova Semibold';
+    src: url('fonts/Proxima Nova Semibold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
