@@ -7,28 +7,67 @@
 </head>
 
 <body> 
-
-<div class="white-nav">    
-   
-    <div class="top-logo">
-        <img src="img/Asset 1@2x.png" class="logo"/>
-      
-
-    <div class="chore-nav">
-        <div class="chore-nav-header">
-        <h1>Chores</h1>
+<div id="app" class="page"> 
+<section class="sidebar">
+    <div class="sidebar-nav">    
+        <div class="top-logo">
+            <img src="img/Asset 1@2x.png" class="logo"/>
+        </div>
+        <div class="chore-nav">
+            <div class="chore-nav-header">
+            <h1>Chores</h1>
+            </div>
+        </div>
+        <div class="chore-nav-rooms">
+            <ul>
+                <li><a href="allchores.html">All Chores</a></li>
+                <li><a href="bedroom.html">Bedroom</a></li>
+                <li><a href="bathroom.html">Bathroom</a></li>
+                <li><a href="kitchen.html">Kitchen</a></li>
+            </ul>
         </div>
     </div>
-    <div class="chore-nav-rooms">
-        <ul>
-            <li><a href="allchores.html">All Chores</a></li>
-            <li><a href="bedroom.html">Bedroom</a></li>
-            <li><a href="bathroom.html">Bathroom</a></li>
-            <li><a href="kitchen.html">Kitchen</a></li>
-        </ul>
+</section>
+
+<main class="chore-content">
+    <div class="top-header">
+        <div class="date">Monday, June 29 2020</div>
+        <div class="chore-button">
+            <button class="add-chore" onclick="overlayOn()">Add Chore</button>
+        </div>
     </div>
+    <div class="chore-counter">
+        <div class="completed-container">
+            <div class="completed">Completed</div>
+            <div class="completed-number">0</div>
+        </div>
+        <div class="remaining-container">
+            <div class="remaining">Remaining</div>
+            <div class="remaining-number">3</div>
+        </div>
     </div>
-</div>
+    <div class="main-chore-header">Chores</div>
+    <div class="main-chore-list">
+        <section class="chore-list-header">
+            <section class="chore-name">Chore Name</section>
+            <section class="chore-owner">Owner</section>
+            <section class="chore-date-assigned">Date Assigned</section>
+            <section class="chore-date-due">Due Date</section>
+        </section>
+
+    </div>
+</main>
+
+<section class="chore-overlay">
+    <div id="overlay">
+
+    </div>
+
+</section>
+
+</div> 
+
+<script src="ux_style.js"></script>
    
 </body>
 </html>
