@@ -27,6 +27,23 @@ body {
     
 }
 
+.add-chore {
+    margin-left: 474px;
+    margin-top: 66px;
+    height: 43px;
+    width: 210px;
+    border-radius: 21.5px;
+    border: none;
+    color: var(--highlight);
+    font-family: "Proxima Nova Regular";
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-align: center;
+    background: var(--button);
+}
+
 /********Navigation Sidebar**********/
 
 .logo {
@@ -108,23 +125,6 @@ body {
     line-height: 42px;
     margin-top: 77px;
     margin-left: 48px;
-}
-
-.add-chore {
-    margin-left: 474px;
-    margin-top: 66px;
-    height: 43px;
-    width: 210px;
-    border-radius: 21.5px;
-    border: none;
-    color: var(--highlight);
-    font-family: "Proxima Nova Regular";
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: 0;
-    line-height: 20px;
-    text-align: center;
-    background: var(--button);
 }
 
 .chore-counter {
@@ -238,7 +238,6 @@ body {
 .chore-date-due {
     margin-left: 82px;
 }
-
 
 
 

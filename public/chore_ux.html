@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Happy Chores</title>
     <link rel="stylesheet" href="css/ux_style.css">
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body> 
@@ -33,7 +34,7 @@
     <div class="top-header">
         <div class="date">Monday, June 29 2020</div>
         <div class="chore-button">
-            <button class="add-chore" onclick="overlayOn()">Add Chore</button>
+            <button class="add-chore" id="add-chore">Add Chore</button>
         </div>
     </div>
     <div class="chore-counter">
@@ -57,15 +58,57 @@
 
     </div>
 </main>
+</div>
 
-<section class="chore-overlay">
-    <div id="overlay">
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <div class="chore-overlay-header">
+                <div>
+                    <div>Yay! New Chores</div>
+                </div>
+                    <div class="close">
+                        <span class="close-icon">&times</span>
+                        <div class="close-word">Close</div>
+                    </div>
+                </div>  
+            
+            <div class="chore">
+                <form name="choreForm" id="chore-form" onsubmit="return addChore()" autocomplete="on">
+                    <label for="chore-label">Chore</label><br>
+                        <select name="chore-select" id="chore-select">
+                            <option value="bathroom">Bathroom</option>
+                            <option value="bedroom">Bedroom</option>
+                            <option value="kitchen">Kitchen</option>
+                            <option value="family">Family Room</option>
+                            <option value="yard">Yard</option>
+                        </select><br>
+                    <!-- onkeyup="submitActive()" -->
+                    <label for "familyMembers">Assign to</label><br>
+                        <select name="famMembers" id="famMembers">
+                            <option value="kyle">Kyle</option>
+                            <option value="carolyn">Carolyn</option>
+                            <option value="avery">Avery</option>
+                            <option value="owen">Owen</option>
+                            <option value="stella">Stella</option>
+                        </select><br>
+                    <label for="due-date">Due Date</label><br>
+                        <select name="due-date-select" id="due-date-select">
+                            <option value="july">06/12/2020</option>
+                        </select><br>
+                    <label for="notes">Notes</label><br>
+                    <textarea name="note-text" id="note-text" cols="30" rows="10"></textarea><br>
+                    <button class="save-chore" id="save-chore">Save Chore</button><br>
+                    <!-- <input type="submit" value="Save Chore" id="submit" disabled/> -->
+                </form>
+            </div>
+        </div>
+        </div>
 
     </div>
 
-</section>
 
-</div> 
+
+
 
 <script src="ux_style.js"></script>
    
