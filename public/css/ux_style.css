@@ -53,20 +53,24 @@ body {
     margin-left: 47px;
 }
 
+.tab {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
+}
+
 .sidebar-nav {
     display: inline-flex;
     flex-direction: column;
     width: 330px;
     height: 1024px;
     background-color: var(--highlight);
-
 }
 
 .chore-nav {
     font-family: 'Proxima Nova Bold';
     font-size: 16px;
     text-transform: uppercase;
-    
 }
 
 .tablinks {
@@ -75,7 +79,7 @@ body {
     color: var(--light-text);
     letter-spacing: 0;
     line-height: 20px;
-    margin-top: 80px;
+    /* margin-top: 80px; */
     border: none;
     text-transform: uppercase;
     background-color: var(--highlight);
@@ -256,8 +260,12 @@ body {
     margin-left: 48px;
 }
 
+.family-nav-header.tablinks {
+    line-height: 0;
+}
+
 .family-container {
-    height: 208px;
+    height: 408px;
     width: 285px;
     border-radius: 12px;
     background-color: var(--highlight);

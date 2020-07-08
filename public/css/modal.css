@@ -4,7 +4,6 @@
     --button: #2757FF;
     --text: rgba(0,0,0,0.6);
     --light-text: #D3D8E1;
-
 }
 
 .overlay {
@@ -132,6 +131,113 @@ textarea {
     text-align: center;
     background: var(--button);
 }
+
+.famOverlay {
+    position: fixed;
+    display: none;
+    z-index: 1;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.famOverlay-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    /* width: 80%; */
+}
+
+.famOverlay-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #fefefe;
+    margin-left: 852px;
+    padding: 0;
+    border: 1px solid #888;
+    width: 388px;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animateright;
+    animation-duration: 0.4s;
+}
+.famClose {
+    display: flex;
+    flex-direction: row;
+    color: rgba(0,0,0,0.6);
+    font-family: "Proxima Nova Thin";
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 30px;
+    margin-top: 66px;
+    margin-left: 200px;
+}
+
+.famClose-icon {
+    font-size: 25px;
+    margin-right: 26px;
+}
+
+.famClose:hover,
+.famClose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.register-header {
+    display: flex;
+    flex-direction: row;
+    color: rgba(0,0,0,0.6);
+    font-family: "Proxima Nova Thin";
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 42px;
+}
+
+.register-main {
+    display: flex;
+    flex-direction: column;
+    margin-left: 58px;
+}
+
+label {
+    color: rgba(0,0,0,0.6);
+    font-family: "Proxima Nova Thin";
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+
+input {
+    margin-top: 10px;
+    height: 45px;
+    width: 250px;
+}
+
+.familySubmit {
+    margin-left: 0;
+    margin-top: 57px;
+    height: 43px;
+    width: 158px;
+    border-radius: 21.5px;
+    border: none;
+    color: var(--highlight);
+    font-family: "Proxima Nova Regular";
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-align: center;
+    background: var(--button);
+}
+
 
 @keyframes animateright {
     from{right: -300px; opacity: 0}

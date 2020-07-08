@@ -1,15 +1,18 @@
 const modal = document.getElementById("overlay");
 const btn = document.getElementById("add-chore");
 const span = document.getElementsByClassName("close")[0];
+
 const choreList = [];
 const app = document.querySelector('.chore-list');
 const chore = document.getElementById('chore');
 const assign = document.getElementById('famMembers');
 const suButton = document.getElementById('submit');
 
-const famModal = document.getElementById('famOverlay');
-const famBtn = document.getElementById('familySubmit');
-const famSpan = document.getElementsByClassName('close')[0];
+const famModal = document.getElementById("famOverlay");
+const famBtn = document.getElementById("add-fam");
+const famSpan = document.getElementsByClassName("famClose")[0];
+
+/************Chore Modal ************/
 
 btn.onclick = function() {
     modal.style.display = "block";
@@ -25,6 +28,8 @@ window.onclick = function(event) {
     }
 }
 
+/******************Family Modal ***********/
+
 famBtn.onclick = function() {
     famModal.style.display = "block";
 }
@@ -39,28 +44,22 @@ window.onclick = function(event) {
     }
 }
 
-// function emptyFields() {
-//     if (chore.value !== '' && famMembers.value !== '' ) {
-//         return false;
-//     }
-//     return true;
-// }
+function emptyFields() {
+    if (chore.value !== '' && famMembers.value !== '' ) {
+        return false;
+    }
+    return true;
+}
 
-// function submitActive() {
-//     if (emptyFields() === true) {
-//       suButton.disabled = true;
-//     return false;
-//     } else {
-//       suButton.disabled = false;
-//      return true;
-//   }
-// }
-
-// choreList.forEach(function (chore) {
-//     const li = document.createElement('li');
-//     li.textContent = `Chore: ${chore.name} - Assigned to: ${chore.assignee}`;
-//     app.appendChild(li);
-// });
+function submitActive() {
+    if (emptyFields() === true) {
+      suButton.disabled = true;
+    return false;
+    } else {
+      suButton.disabled = false;
+     return true;
+  }
+}
 
 function setAttributes(elements, attributes) {
     Object.keys(attributes).forEach(function(name) {
@@ -117,7 +116,7 @@ function addChore() {
     app.appendChild(newLi);
     // clearFields();
     // submitActive();
-    console.log(addChore);
+    // console.log(addChore);
     return false; 
 }
 
