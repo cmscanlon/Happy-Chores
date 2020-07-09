@@ -14,4 +14,4 @@ function switchPage(evt, choreOrFamily) {
     evt.currentTarget.className += " active";
   }
 
-  // document.getElementById("defaultOpen").click();
+  document.getElementById("defaultOpen").click();

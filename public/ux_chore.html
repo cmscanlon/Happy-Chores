@@ -18,10 +18,10 @@
         <div class="tab">
         <div class="chore-nav">
             <div class="chore-nav-header">
-            <button class="tablinks" onclick="switchPage(event, 'choreTab')">Chores</button>
+            <button class="tablinks" id="defaultOpen" onclick="switchPage(event, 'choreTab')">Chores</button>
             </div>
             <div class="family-nav-header">
-                <button class="tablinks" id="" onclick="switchPage(event, 'familyTab')">Family</button>
+                <button class="tablinks" onclick="switchPage(event, 'familyTab')">Family</button>
         </div>
     </div>
 </div>
@@ -58,6 +58,7 @@
         </div>
     </div>
     <div class="main-chore-header">Chores</div>
+    <div class="chore">
     <div class="main-chore-list">
         <section class="chore-list-header">
             <section class="chore-name">Chore Name</section>
@@ -65,9 +66,9 @@
             <section class="chore-date-assigned">Date Assigned</section>
             <section class="chore-date-due">Due Date</section>
         </section>
-    <div class="chore">
+    
         <div id="app" class="app">
-            <ul class="chore-list"> 
+            <ul class="chore-list" id="chore-list"> 
         </ul>
         </div>
     </div>
@@ -88,7 +89,7 @@
         </div>  
         
     <div class="chore">
-        <form name="choreForm" id="chore-form"  autocomplete="on">
+        <form name="choreForm" id="chore-form"  onsubmit="return addChore()" autocomplete="on">
             <label for="chore-label">Chore</label><br>
                 <select name="chore-select" id="chore-select">
                     <option value="bathroom">Bathroom</option>
@@ -105,7 +106,7 @@
                 </select><br>
             <label for="notes">Notes</label><br>
             <textarea name="note-text" id="note-text" cols="30" rows="10"></textarea><br>
-            <input class="save-chore" value="Save Chore" id="submit" />
+            <input type="submit" class="save-chore" value="Save Chore" id="submit" />
         </form>
     </div>
     </div>

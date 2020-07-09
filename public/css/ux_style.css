@@ -53,12 +53,6 @@ body {
     margin-left: 47px;
 }
 
-.tab {
-    display: flex;
-    flex-direction: row;
-    margin-top: 80px;
-}
-
 .sidebar-nav {
     display: inline-flex;
     flex-direction: column;
@@ -71,6 +65,12 @@ body {
     font-family: 'Proxima Nova Bold';
     font-size: 16px;
     text-transform: uppercase;
+}
+
+.tab {
+    display: flex;
+    flex-direction: row;
+    margin-top: 80px;
 }
 
 .tablinks {
