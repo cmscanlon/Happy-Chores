@@ -4,8 +4,9 @@ const span = document.getElementsByClassName("close")[0];
 
 const choreList = [];
 const app = document.querySelector('.chore-list');
-const chore = document.getElementById('chore');
+const chore = document.getElementById('choreSelect');
 const assign = document.getElementById('famMembers');
+const date = document.getElementById('due-date-select');
 const suButton = document.getElementById('submit');
 
 const famModal = document.getElementById("famOverlay");
@@ -45,7 +46,7 @@ window.onclick = function(event) {
 }
 
 function emptyFields() {
-    if (chore.value !== '' && famMembers.value !== '' ) {
+    if (choreSelect.value !== '' && famMembers.value !== '' ) {
         return false;
     }
     return true;
