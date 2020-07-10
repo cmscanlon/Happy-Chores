@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Chores</title>
+    <link rel="stylesheet" href="css/ux_style.css">
+    <link rel="stylesheet" href="css/modal.css">
+</head>
+
+<body> 
+
+<div id="page" class="page"> 
+<section class="sidebar">
+    <div class="sidebar-nav">    
+        <div class="top-logo">
+            <img src="img/Asset 1@2x.png" class="logo"/>
+        </div>
+        <div class="tab">
+            <div class="chore-nav">
+                <div class="chore-nav-header">
+                    <button class="tablinks" id="defaultOpen" onclick="switchPage(event, 'choreTab')">Chores</button>
+                </div>
+                <div class="family-nav-header">
+                    <button class="tablinks" onclick="switchPage(event, 'familyTab')">Family</button>
+                </div>
+            </div>
+        </div>
+        <div class="chore-nav-rooms">
+            <ul>
+                <li><a href="allchores.html">All Chores</a></li>
+                <li><a href="bedroom.html">Bedroom</a></li>
+                <li><a href="bathroom.html">Bathroom</a></li>
+                <li><a href="kitchen.html">Kitchen</a></li>
+            </ul>
+        </div>
+    
+    </div>
+</section>
+
+
+<div id="choreTab" class="tabcontent">
+
+<main class="chore-content">
+    <div class="top-header">
+        <div class="date">Monday, June 29 2020</div>
+        <div class="chore-button">
+            <button class="add-btn" id="add-chore">Add Chore</button>
+        </div>
+    </div>
+    <div class="chore-counter">
+        <div class="completed-container">
+            <div class="completed">Completed</div>
+            <div class="completed-number">0</div>
+        </div>
+        <div class="remaining-container">
+            <div class="remaining">Remaining</div>
+            <div class="remaining-number">3</div>
+        </div>
+    </div>
+    <div class="main-chore-header">Chores</div>
+    <div class="chore">
+    <div class="main-chore-list">
+        <section class="chore-list-header">
+            <section class="chore-name">Chore Name</section>
+            <section class="chore-owner">Owner</section>
+            <section class="chore-date-assigned">Date Assigned</section>
+            <section class="chore-date-due">Due Date</section>
+        </section>
+    
+        <div id="app" class="app">
+            <ul class="chore-list" id="chore-list"></ul>
+        </div>
+    </div>
+    </div>
+</main>
+</div>
+
+<div class="overlay" id="overlay">
+    <div class="overlay-content">
+        <div class="chore-overlay-header">
+            <div>
+                <div>Yay! New Chores</div>
+            </div>
+                <div class="close">
+                    <span class="close-icon">&times</span>
+                    <div class="close-word">Close</div>
+                </div>
+        </div>  
+        
+    <div class="chore-modal-form">
+        <form name="choreForm" id="chore-form"  onsubmit="return addChore()" autocomplete="on">
+            <label for="chore-label">Chore</label><br>
+                <select name="chore-select" id="choreSelect">
+                    <option>Bathroom</option>
+                    <option>Bedroom</option>
+                    <option>Kitchen</option>
+                    <option>Family Room</option>
+                    <option>Yard</option>
+                </select><br>
+            <label for "familyMembers">Assign to</label><br>
+                <select name="famMembers" id="famMembers"></select><br>
+            <label for="due-date">Due Date</label><br>
+                <select name="due-date-select" id="due-date-select">
+                    <option value="july">06/12/2020</option>
+                </select><br>
+            <label for="notes">Notes</label><br>
+            <textarea name="note-text" id="note-text" cols="30" rows="10"></textarea><br>
+            <input type="submit" class="save-chore" value="Save Chore" id="submit" />
+        </form>
+    </div>
+    </div>
+</div>
+
+
+<div id="familyTab" class="tabcontent"> 
+    <div class="top-header">
+        <div class="date">Monday, June 29 2020</div>
+        <div class="family-button">
+            <button class="add-btn" id="add-fam">Add Family</button>
+        </div>
+    </div>  
+        <div class="register-form">
+            <div class="family">
+            <div class="family-container">
+                <div class="family-member-list">
+                    <div class="family-member">Family Members</div>
+                    <div id="fam" class="fam">
+                        <ul class="family-list" id="family-list"> 
+                    </ul>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="famOverlay" id="famOverlay">
+                <div class="famOverlay-content">
+                    <div class="chore-famOverlay-header">
+                            <div class="famClose">
+                                <span class="famClose-icon">&times</span>
+                                <div class="famClose-word">Close</div>
+                            </div>
+                    </div>  
+                    <div class="register-main">
+                        <div class="register-header">
+                            <h1>Add Family Member</h1>
+                        </div>
+                        <form name="registerForm" id='registerForm' onsubmit="return addFamilyMember()"/>
+                            <label for="add-fam-member">First Name</label><br>
+                                <input type="text" name="fname" id="fname" class="fname" onkeyup="submitButtonActive()" /><br>
+                                <input type="submit" value="Add" id="familySubmit" class="familySubmit" disabled />
+                        </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>    
+</div>
+
+<script src="register.js"></script>
+<script src="ux_chore.js"></script>
+<script src="tabs.js"></script>
+   
+</body>
+</html>
