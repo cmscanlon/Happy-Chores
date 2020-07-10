@@ -29,7 +29,7 @@ window.onclick = function(event) {
     }
 }
 
-/******************Family Modal ***********/
+/************Family Modal ***********/
 
 famBtn.onclick = function() {
     famModal.style.display = "block";
@@ -85,7 +85,7 @@ function addChore() {
     setAttributes(editModeDiv, {class: 'div2', id: 'div2'});
     
     const newChore = {
-        name: document.getElementById('chore').value,
+        name: document.getElementById('choreSelect').value,
         assignee: document.getElementById('famMembers').value
     }
 
@@ -117,7 +117,7 @@ function addChore() {
     app.appendChild(newLi);
     // clearFields();
     // submitActive();
-    // console.log(addChore);
+    console.log(addChore);
     return false; 
 }
 

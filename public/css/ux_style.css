@@ -216,7 +216,7 @@ body {
 }
 
 .main-chore-list {
-    height: 162px;
+    height: 362px;
     width: 900px;
     border-radius: 12px;
     background-color: var(--highlight);
@@ -245,6 +245,10 @@ body {
 
 .chore-date-due {
     margin-left: 82px;
+}
+
+.chore-list ul {
+    list-style: none;
 }
 
 /************Family***************/
