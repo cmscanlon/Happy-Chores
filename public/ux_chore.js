@@ -8,6 +8,7 @@ const chore = document.getElementById('choreSelect');
 const assign = document.getElementById('famMembers');
 const date = document.getElementById('due-date-select');
 const suButton = document.getElementById('submit');
+const choreTable = document.getElementById('choreTable');
 
 const famModal = document.getElementById("famOverlay");
 const famBtn = document.getElementById("add-fam");
@@ -69,6 +70,10 @@ function setAttributes(elements, attributes) {
 }
 
 function addChore() {
+
+    const checkbtn = document.createElement('input');
+    setAttributes(checkbtn, {type: 'image', src: 'img/stop-outline.svg', class: 'check', value: "Check", }); 
+
     const delbtn = document.createElement('input');
     setAttributes(delbtn, {type: 'image', src: 'img/trash-outline.svg', class: 'delete', value: "Delete", onclick: 'deleteChore(event)'});
 
@@ -86,11 +91,41 @@ function addChore() {
     
     const newChore = {
         name: document.getElementById('choreSelect').value,
-        assignee: document.getElementById('famMembers').value
+        assignee: document.getElementById('famMembers').value,
+        date: document.getElementById('due-date-select').value
     }
 
-    const choreDescription = document.createElement('span');
-    choreDescription.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
+    const choreDescription = document.createElement('tr');
+
+    const rowCount = choreTable.rows.length;
+    const row = choreTable.insertRow(rowCount);
+
+    row.insertCell(0).textContent = `${newChore.name}`;
+    row.insertCell(1).textContent = `${newChore.assignee}`;
+    row.insertCell(2).textContent = `${newChore.date}`;
+    
+    // const choreDescription = document.createElement('tr');
+    // setAttributes(choreDescription, {class: 'choreListDiv', id: 'choreListDiv'});
+
+    // const choreName = document.createElement('td');
+    // setAttributes(choreName, {class: 'choreName'});
+    // // choreName.textContent = `${newChore.name}`;
+
+    // const choreOwner = document.createElement('td');
+    // setAttributes(choreOwner, {class: 'choreOwner'});
+    // // choreOwner.textContent = `${newChore.assignee}`;
+
+    // const choreDueDate = document.createElement('td');
+    // setAttributes(choreDueDate, {class: 'choreDueDate'});
+    // // choreDueDate.textContent = `${newChore.date}`;
+
+    // choreName.appendChild(`${newChore.name}`);
+    // choreOwner.appendChild(`${newChore.assignee}`);
+    // choreDueDate.appendChild(`${newChore.date}`);
+
+    // choreDescription.appendChild(choreName);
+    // choreDescription.appendChild(choreOwner);
+    // choreDescription.appendChild(choreDueDate);
 
     const editInput1 = document.createElement('input');
     setAttributes(editInput1, {class: 'edit', id: 'edit', type: 'text', value: `${newChore.name}` });
@@ -103,10 +138,14 @@ function addChore() {
 
     const savebtn = document.createElement('input');
     setAttributes(savebtn, {type: 'image', src: 'img/checkmark-outline.svg', class: 'save', onclick: 'saveChore(event)'});
-
+    
+    choreDescription.appendChild(checkbtn);
     readOnlyDiv.appendChild(choreDescription);
-    readOnlyDiv.appendChild(editbtn);
-    readOnlyDiv.appendChild(delbtn);
+    // choreDescription.appendChild(choreName);
+    // choreDescription.appendChild(choreOwner);
+    // choreDescription.appendChild(choreDueDate);
+    choreDescription.appendChild(editbtn);
+    choreDescription.appendChild(delbtn);
     newLi.appendChild(readOnlyDiv);
     newLi.appendChild(editModeDiv);
     editModeDiv.appendChild(editInput1);
@@ -117,9 +156,28 @@ function addChore() {
     app.appendChild(newLi);
     // clearFields();
     // submitActive();
+    // addRow(choreTable);
     console.log(addChore);
     return false; 
 }
+
+// function addRow(choreTable) {
+//     const choreAddTable = document.getElementById(choreTable);
+//     const newRow = choreAddTable.insertRow(-1);
+//     const nameCell = newRow.insertCell(0);
+//     const ownerCell = newRow.insertCell(1);
+//     const dateCell = newRow.insertCell(2);
+
+//     const choreOwner = document.createTextNode('New Information');
+//     // const choreOwner = choreOwner.textContent(`${newChore.assignee}`);
+    
+//     // const choreName = choreName.textContent(`${newChore.name}`);
+//     // const choreDueDate = choreDueDate.textContent(`${newChore.date}`);
+    
+//     // nameCell.appendChild(choreName);
+//     ownerCell.appendChild(choreOwner);
+//     // dateCell.appendChild(choreDueDate);
+// }
 
 function deleteChore(event) {
     const chores = document.getElementById('chores');

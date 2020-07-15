@@ -247,9 +247,37 @@ body {
     margin-left: 82px;
 }
 
-.chore-list ul {
+.chore-list li{
     list-style: none;
+    color: rgba(0,0,0,0.6);
+    margin-top: 22px;
 }
+
+.choreListDiv {
+    display: flex;
+    flex-direction: row;
+}
+
+.div2 {
+    display: none;
+}
+
+.check {
+    margin-left: 1px;
+}
+
+.choreName {
+    margin-left: 40px;
+}
+
+.choreOwner {
+    margin-left: 67px;
+}
+
+.choreDueDate {
+    margin-left: 103px;
+}
+
 
 /************Family***************/
 
@@ -303,13 +331,18 @@ body {
 	display: inline-block;
 	width: 15px;
 	height: 15px;
-	padding: 0 10px;
+    padding: 0 10px;
+    color: rgba(0,0,0,0.6);
+    margin-left: 51px;
+    fill: var(--button);
 }
 
 .editbtn {
 	width: 20px;
 	height: 20px;
-	padding: 0 0 0 50px;
+    padding: 0 0 0 50px;
+    margin-left: 113px;
+    
 }
 
 .save {
@@ -322,6 +355,13 @@ body {
 	width: 20px;
 	height: 20px;
 	padding: 0 10px;
+}
+
+.check {
+    width: 18px;
+    height: 18px;
+    /* padding: 0 10px 0 10px; */
+    color: rgba(0,0,0,0.6);
 }
 
 
