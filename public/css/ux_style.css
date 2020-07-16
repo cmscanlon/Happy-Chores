@@ -4,7 +4,6 @@
     --button: #2757FF;
     --text: rgba(0,0,0,0.6);
     --light-text: #D3D8E1;
-
 }
 
 html {
@@ -262,22 +261,35 @@ body {
     display: none;
 }
 
+input {
+    height: 18px;
+}
+
 .check {
     margin-left: 1px;
 }
 
-.choreName {
-    margin-left: 40px;
+.choresListSpan {
+    display: flex;
+    flex-direction: row wrap;
 }
 
-.choreOwner {
-    margin-left: 67px;
+.flex-table-row {
+    display: flex;
+    flex-flow: row;
 }
 
-.choreDueDate {
-    margin-left: 103px;
+.flex-table {
+    display: flex;
+    flex-flow: row wrap;
 }
 
+.flex-row {
+    width: calc(100% /6);
+    text-align: left;
+    justify-content: left;
+    /* padding: 0.2em 0.2em; */
+}
 
 /************Family***************/
 
@@ -340,21 +352,21 @@ body {
 .editbtn {
 	width: 20px;
 	height: 20px;
-    padding: 0 0 0 50px;
-    margin-left: 113px;
+    /* padding: 0 0 0 50px;
+    margin-left: 113px; */
     
 }
 
 .save {
 	width: 20px;
 	height: 20px;
-	padding: 0 5px;
+	/* padding: 0 5px; */
 }
 
 .cancel {
 	width: 20px;
 	height: 20px;
-	padding: 0 10px;
+	/* padding: 0 10px; */
 }
 
 .check {

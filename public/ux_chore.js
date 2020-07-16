@@ -72,13 +72,13 @@ function setAttributes(elements, attributes) {
 function addChore() {
 
     const checkbtn = document.createElement('input');
-    setAttributes(checkbtn, {type: 'image', src: 'img/stop-outline.svg', class: 'check', value: "Check", }); 
+    setAttributes(checkbtn, {type: 'image', role: 'cell', src: 'img/stop-outline.svg', class: 'flex-row', value: "Check", }); 
 
     const delbtn = document.createElement('input');
-    setAttributes(delbtn, {type: 'image', src: 'img/trash-outline.svg', class: 'delete', value: "Delete", onclick: 'deleteChore(event)'});
+    setAttributes(delbtn, {type: 'image', role: 'cell', src: 'img/trash-outline.svg', class: 'flex-row', value: "Delete", onclick: 'deleteChore(event)'});
 
     const editbtn = document.createElement('input');
-    setAttributes(editbtn, {type: 'image', src: 'img/create-outline.svg', class: 'editbtn', value: 'Edit', onclick: 'editMode(event)'});
+    setAttributes(editbtn, {type: 'image', role: 'cell', src: 'img/create-outline.svg', class: 'flex-row', value: 'Edit', onclick: 'editMode(event)'});
   
     const newLi = document.createElement('li');
     setAttributes(newLi, {class: 'chore-li', id: 'chores'});
@@ -95,37 +95,31 @@ function addChore() {
         date: document.getElementById('due-date-select').value
     }
 
-    const choreDescription = document.createElement('tr');
-
-    const rowCount = choreTable.rows.length;
-    const row = choreTable.insertRow(rowCount);
-
-    row.insertCell(0).textContent = `${newChore.name}`;
-    row.insertCell(1).textContent = `${newChore.assignee}`;
-    row.insertCell(2).textContent = `${newChore.date}`;
+    const choreDescription = document.createElement('div');
+    setAttributes(choreDescription, {type: 'text', role: 'rowgroup', class: 'flex-table-row'});
     
+    const choreName = document.createElement('div');
+    setAttributes(choreName, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-name', value: `${newChore.name}`});
+    choreName.textContent = `${newChore.name}`;
+
+    const choreOwner = document.createElement('div');
+    setAttributes(choreOwner, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-owner'});
+    choreOwner.textContent = `${newChore.assignee}`;
+
+    const choreDueDate = document.createElement('div');
+    setAttributes(choreDueDate, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-date'});
+    choreDueDate.textContent = `${newChore.date}`;
+
     // const choreDescription = document.createElement('tr');
     // setAttributes(choreDescription, {class: 'choreListDiv', id: 'choreListDiv'});
 
-    // const choreName = document.createElement('td');
-    // setAttributes(choreName, {class: 'choreName'});
-    // // choreName.textContent = `${newChore.name}`;
+    // const rowCount = choreTable.rows.length;
+    // const row = choreTable.insertRow(rowCount);
 
-    // const choreOwner = document.createElement('td');
-    // setAttributes(choreOwner, {class: 'choreOwner'});
-    // // choreOwner.textContent = `${newChore.assignee}`;
-
-    // const choreDueDate = document.createElement('td');
-    // setAttributes(choreDueDate, {class: 'choreDueDate'});
-    // // choreDueDate.textContent = `${newChore.date}`;
-
-    // choreName.appendChild(`${newChore.name}`);
-    // choreOwner.appendChild(`${newChore.assignee}`);
-    // choreDueDate.appendChild(`${newChore.date}`);
-
-    // choreDescription.appendChild(choreName);
-    // choreDescription.appendChild(choreOwner);
-    // choreDescription.appendChild(choreDueDate);
+    // row.insertCell(-1).textContent = 'checkbtn';
+    // row.insertCell(-1).textContent = `${newChore.name}`;
+    // row.insertCell(-1).textContent = `${newChore.assignee}`;
+    // row.insertCell(-1).textContent = `${newChore.date}`;
 
     const editInput1 = document.createElement('input');
     setAttributes(editInput1, {class: 'edit', id: 'edit', type: 'text', value: `${newChore.name}` });
@@ -141,9 +135,9 @@ function addChore() {
     
     choreDescription.appendChild(checkbtn);
     readOnlyDiv.appendChild(choreDescription);
-    // choreDescription.appendChild(choreName);
-    // choreDescription.appendChild(choreOwner);
-    // choreDescription.appendChild(choreDueDate);
+    choreDescription.appendChild(choreName);
+    choreDescription.appendChild(choreOwner);
+    choreDescription.appendChild(choreDueDate);
     choreDescription.appendChild(editbtn);
     choreDescription.appendChild(delbtn);
     newLi.appendChild(readOnlyDiv);
@@ -234,3 +228,9 @@ function clearFields() {
             }
         }
     }
+
+{/* <div class="flex-table row" role="rowgroup">
+    <div class="flex-row" role="cell" type="image" src="img/stop-outline.svg" value="Check"></div>
+    <div class='flex-row' role='cell' type='image' src='img/create-outline.svg' value='Edit' onclick='editMode(event)'></div>
+</div> */}
+
