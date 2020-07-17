@@ -218,6 +218,12 @@ label {
     background: var(--button);
 }
 
+.fname {
+    margin-top: 10px;
+    height: 45px;
+    width: 250px;
+}
+
 
 @keyframes animateright {
     from{right: -300px; opacity: 0}

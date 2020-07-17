@@ -59,20 +59,18 @@
     </div>
     <div class="main-chore-header">Chores</div>
     <div class="chore">
-    <div class="main-chore-list">
-        <section class="chore-list-header">
-            <section class="chore-name">Chore Name</section>
-            <section class="chore-owner">Owner</section>
-            <section class="chore-date-assigned">Date Assigned</section>
-            <section class="chore-date-due">Due Date</section>
-        </section>
-    
-        <div id="app" class="app">
-           
-                <ul class="chore-list" id="chore-list"></ul>
-                <!-- <table id="choreTable"></table> -->
-            
-            
+        <div class="main-chore-list">
+            <div class="chore-list-header" role="rowgroup">
+                <div class="flex-row" role="columnheader" id="chore-name"></div>
+                <div class="flex-row" role="columnheader" id="chore-name">Chore Name</div>
+                <div class="flex-row" role="columnheader" id="chore-owner">Owner</div>
+                <div class="flex-row" role="columnheader" id="chore-date-assigned">Date Assigned</div>
+                <div class="flex-row" role="columnheader" id="chore-date-due">Due Date</div>
+                <div class="flex-row" role="columnheader" id="chore-name"></div>
+            </div>
+            <div id="app" class="app">
+                    <ul class="chore-list" id="chore-list"></ul>
+            </div>
         </div>
     </div>
     </div>

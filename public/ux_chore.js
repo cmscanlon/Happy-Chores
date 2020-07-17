@@ -110,17 +110,6 @@ function addChore() {
     setAttributes(choreDueDate, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-date'});
     choreDueDate.textContent = `${newChore.date}`;
 
-    // const choreDescription = document.createElement('tr');
-    // setAttributes(choreDescription, {class: 'choreListDiv', id: 'choreListDiv'});
-
-    // const rowCount = choreTable.rows.length;
-    // const row = choreTable.insertRow(rowCount);
-
-    // row.insertCell(-1).textContent = 'checkbtn';
-    // row.insertCell(-1).textContent = `${newChore.name}`;
-    // row.insertCell(-1).textContent = `${newChore.assignee}`;
-    // row.insertCell(-1).textContent = `${newChore.date}`;
-
     const editInput1 = document.createElement('input');
     setAttributes(editInput1, {class: 'edit', id: 'edit', type: 'text', value: `${newChore.name}` });
 
@@ -150,28 +139,9 @@ function addChore() {
     app.appendChild(newLi);
     // clearFields();
     // submitActive();
-    // addRow(choreTable);
     console.log(addChore);
     return false; 
 }
-
-// function addRow(choreTable) {
-//     const choreAddTable = document.getElementById(choreTable);
-//     const newRow = choreAddTable.insertRow(-1);
-//     const nameCell = newRow.insertCell(0);
-//     const ownerCell = newRow.insertCell(1);
-//     const dateCell = newRow.insertCell(2);
-
-//     const choreOwner = document.createTextNode('New Information');
-//     // const choreOwner = choreOwner.textContent(`${newChore.assignee}`);
-    
-//     // const choreName = choreName.textContent(`${newChore.name}`);
-//     // const choreDueDate = choreDueDate.textContent(`${newChore.date}`);
-    
-//     // nameCell.appendChild(choreName);
-//     ownerCell.appendChild(choreOwner);
-//     // dateCell.appendChild(choreDueDate);
-// }
 
 function deleteChore(event) {
     const chores = document.getElementById('chores');
@@ -228,9 +198,4 @@ function clearFields() {
             }
         }
     }
-
-{/* <div class="flex-table row" role="rowgroup">
-    <div class="flex-row" role="cell" type="image" src="img/stop-outline.svg" value="Check"></div>
-    <div class='flex-row' role='cell' type='image' src='img/create-outline.svg' value='Edit' onclick='editMode(event)'></div>
-</div> */}
 

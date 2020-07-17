@@ -16,8 +16,7 @@ html {
 body {
     background: var(--main);
     padding: 0;
-    margin: 0;
-    
+    margin: 0;  
 }
 
 .page {
@@ -225,32 +224,21 @@ body {
 
 .chore-list-header {
     display: flex;
-    flex-direction: row;
+    flex-flow: row;
+    text-align: left;
+    margin-left: 40px;
+    padding-top: 24px;
     font-family: "Proxima Nova Regular";
     font-size: 16px;
     font-weight: bold;
-    padding-top: 24px;
-    padding-left: 91px;
     color: var(--text);
-}
-
-.chore-owner {
-    margin-left: 89px;
-}
-
-.chore-date-assigned {
-    margin-left: 84px;
-}
-
-.chore-date-due {
-    margin-left: 82px;
 }
 
 .chore-list li{
     list-style: none;
     color: rgba(0,0,0,0.6);
-    margin-top: 22px;
-}
+    margin-top: 12px;
+} 
 
 .choreListDiv {
     display: flex;
@@ -283,13 +271,17 @@ input {
     display: flex;
     flex-flow: row wrap;
 }
+div {
+    /* box-sizing: border-box; */
+    /* display: block; */
+}
 
 .flex-row {
     width: calc(100% /6);
     text-align: left;
     justify-content: left;
-    /* padding: 0.2em 0.2em; */
 }
+
 
 /************Family***************/
 
