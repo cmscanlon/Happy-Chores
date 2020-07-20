@@ -92,6 +92,7 @@ function addChore() {
     const newChore = {
         name: document.getElementById('choreSelect').value,
         assignee: document.getElementById('famMembers').value,
+        dateAssign: document.getElementById('dateAssign').value,
         date: document.getElementById('due-date-select').value
     }
 
@@ -105,6 +106,10 @@ function addChore() {
     const choreOwner = document.createElement('div');
     setAttributes(choreOwner, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-owner'});
     choreOwner.textContent = `${newChore.assignee}`;
+
+    const choreDateAssign = document.createElement('div');
+    setAttributes(choreDateAssign, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-date-assign'});
+    choreDateAssign.textContent = `${newChore.dateAssign}`;
 
     const choreDueDate = document.createElement('div');
     setAttributes(choreDueDate, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-date'});
@@ -127,6 +132,7 @@ function addChore() {
     choreDescription.appendChild(choreName);
     choreDescription.appendChild(choreOwner);
     choreDescription.appendChild(choreDueDate);
+    choreDescription.appendChild(choreDateAssign);
     choreDescription.appendChild(editbtn);
     choreDescription.appendChild(delbtn);
     newLi.appendChild(readOnlyDiv);
@@ -139,6 +145,7 @@ function addChore() {
     app.appendChild(newLi);
     // clearFields();
     // submitActive();
+    noChores();
     console.log(addChore);
     return false; 
 }
@@ -173,6 +180,13 @@ function saveChore(event) {
     const editDescription = event.target.closest('li').querySelector('span');
     editDescription.textContent = `Chore: ${newEditChore.editName} - Assigned to: ${newEditChore.editAssignee}`;
     choreList.push(newEditChore);
+}
+
+function noChores() {
+    const noChoreDiv = document.getElementById("noChore");
+    const choreListApp = document.getElementById('app');
+    noChoreDiv.style.display = 'none';
+    choreListApp.style.display = 'block'
 }
 
 function clearFields() {
