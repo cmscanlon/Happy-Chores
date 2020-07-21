@@ -61,6 +61,8 @@ body {
 }
 
 .chore-nav {
+    display: flex;
+    flex-direction: row;
     font-family: 'Proxima Nova Bold';
     font-size: 16px;
     text-transform: uppercase;
@@ -74,11 +76,10 @@ body {
 
 .tablinks {
     font-size: 16px;
-    margin-left: 91px;
+    margin-left: 50px;
     color: var(--light-text);
     letter-spacing: 0;
     line-height: 20px;
-    /* margin-top: 80px; */
     border: none;
     text-transform: uppercase;
     background-color: var(--highlight);
@@ -301,6 +302,7 @@ input {
 
 .family-nav-header.tablinks {
     line-height: 0;
+    /* margin-left: 10px; */
 }
 
 .family-container {
