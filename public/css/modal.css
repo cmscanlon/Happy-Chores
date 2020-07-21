@@ -102,7 +102,7 @@ select {
 
 textarea {
     box-sizing: border-box;
-    height: 199px;
+    height: 75px;
     width: 459px;
     border: 1px solid #979797;
     background-color: #FFFFFF;
@@ -201,12 +201,6 @@ label {
     line-height: 24px;
 }
 
-input {
-    margin-top: 10px;
-    height: 45px;
-    width: 250px;
-}
-
 .familySubmit {
     margin-left: 0;
     margin-top: 57px;
@@ -222,6 +216,12 @@ input {
     line-height: 20px;
     text-align: center;
     background: var(--button);
+}
+
+.fname {
+    margin-top: 10px;
+    height: 45px;
+    width: 250px;
 }
 
 

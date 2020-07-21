@@ -8,6 +8,7 @@ const chore = document.getElementById('choreSelect');
 const assign = document.getElementById('famMembers');
 const date = document.getElementById('due-date-select');
 const suButton = document.getElementById('submit');
+const choreTable = document.getElementById('choreTable');
 
 const famModal = document.getElementById("famOverlay");
 const famBtn = document.getElementById("add-fam");
@@ -69,11 +70,15 @@ function setAttributes(elements, attributes) {
 }
 
 function addChore() {
+
+    const checkbtn = document.createElement('input');
+    setAttributes(checkbtn, {type: 'image', role: 'cell', src: 'img/stop-outline.svg', class: 'flex-row', value: "Check", }); 
+
     const delbtn = document.createElement('input');
-    setAttributes(delbtn, {type: 'image', src: 'img/trash-outline.svg', class: 'delete', value: "Delete", onclick: 'deleteChore(event)'});
+    setAttributes(delbtn, {type: 'image', role: 'cell', src: 'img/trash-outline.svg', class: 'flex-row', value: "Delete", onclick: 'deleteChore(event)'});
 
     const editbtn = document.createElement('input');
-    setAttributes(editbtn, {type: 'image', src: 'img/create-outline.svg', class: 'editbtn', value: 'Edit', onclick: 'editMode(event)'});
+    setAttributes(editbtn, {type: 'image', role: 'cell', src: 'img/create-outline.svg', class: 'flex-row', value: 'Edit', onclick: 'editMode(event)'});
   
     const newLi = document.createElement('li');
     setAttributes(newLi, {class: 'chore-li', id: 'chores'});
@@ -86,11 +91,29 @@ function addChore() {
     
     const newChore = {
         name: document.getElementById('choreSelect').value,
-        assignee: document.getElementById('famMembers').value
+        assignee: document.getElementById('famMembers').value,
+        dateAssign: document.getElementById('dateAssign').value,
+        date: document.getElementById('due-date-select').value
     }
 
-    const choreDescription = document.createElement('span');
-    choreDescription.textContent = `Chore: ${newChore.name} - Assigned to: ${newChore.assignee}`;
+    const choreDescription = document.createElement('div');
+    setAttributes(choreDescription, {type: 'text', role: 'rowgroup', class: 'flex-table-row'});
+    
+    const choreName = document.createElement('div');
+    setAttributes(choreName, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-name', value: `${newChore.name}`});
+    choreName.textContent = `${newChore.name}`;
+
+    const choreOwner = document.createElement('div');
+    setAttributes(choreOwner, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-owner'});
+    choreOwner.textContent = `${newChore.assignee}`;
+
+    const choreDateAssign = document.createElement('div');
+    setAttributes(choreDateAssign, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-date-assign'});
+    choreDateAssign.textContent = `${newChore.dateAssign}`;
+
+    const choreDueDate = document.createElement('div');
+    setAttributes(choreDueDate, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-date'});
+    choreDueDate.textContent = `${newChore.date}`;
 
     const editInput1 = document.createElement('input');
     setAttributes(editInput1, {class: 'edit', id: 'edit', type: 'text', value: `${newChore.name}` });
@@ -103,10 +126,15 @@ function addChore() {
 
     const savebtn = document.createElement('input');
     setAttributes(savebtn, {type: 'image', src: 'img/checkmark-outline.svg', class: 'save', onclick: 'saveChore(event)'});
-
+    
+    choreDescription.appendChild(checkbtn);
     readOnlyDiv.appendChild(choreDescription);
-    readOnlyDiv.appendChild(editbtn);
-    readOnlyDiv.appendChild(delbtn);
+    choreDescription.appendChild(choreName);
+    choreDescription.appendChild(choreOwner);
+    choreDescription.appendChild(choreDueDate);
+    choreDescription.appendChild(choreDateAssign);
+    choreDescription.appendChild(editbtn);
+    choreDescription.appendChild(delbtn);
     newLi.appendChild(readOnlyDiv);
     newLi.appendChild(editModeDiv);
     editModeDiv.appendChild(editInput1);
@@ -117,6 +145,7 @@ function addChore() {
     app.appendChild(newLi);
     // clearFields();
     // submitActive();
+    noChores();
     console.log(addChore);
     return false; 
 }
@@ -153,6 +182,13 @@ function saveChore(event) {
     choreList.push(newEditChore);
 }
 
+function noChores() {
+    const noChoreDiv = document.getElementById("noChore");
+    const choreListApp = document.getElementById('app');
+    noChoreDiv.style.display = 'none';
+    choreListApp.style.display = 'block'
+}
+
 function clearFields() {
     const elements = document.getElementById('chore-form').elements;
 
@@ -176,3 +212,4 @@ function clearFields() {
             }
         }
     }
+

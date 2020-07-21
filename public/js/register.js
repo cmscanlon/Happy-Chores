@@ -40,7 +40,6 @@ function addFamilyMember() {
         name: document.getElementById('fname').value
     }
     const familyLi = document.createElement('li');
-    console.log(familyLi);
     setAttributes(familyLi, {class: 'family-li', id: `${newFamilyMember.name}` });
     
     const familyInfo = document.createElement('span');
