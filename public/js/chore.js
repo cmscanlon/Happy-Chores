@@ -7,6 +7,7 @@ const app = document.querySelector('.chore-list');
 const chore = document.getElementById('choreSelect');
 const assign = document.getElementById('famMembers');
 const date = document.getElementById('due-date-select');
+const dateAssign = document.getElementById('dateAssign');
 const suButton = document.getElementById('submit');
 const choreTable = document.getElementById('choreTable');
 
@@ -47,7 +48,11 @@ window.onclick = function(event) {
 }
 
 function emptyFields() {
-    if (choreSelect.value !== '' && famMembers.value !== '' ) {
+    const choreLength = document.getElementById('choreSelect').selectedIndex === 0;
+    const famMembersLength = document.getElementById('famMembers').selectedIndex === 0;
+    console.log(choreLength);
+    console.log(famMembersLength);
+    if (choreLength === false && famMembersLength === false) {
         return false;
     }
     return true;
@@ -55,13 +60,14 @@ function emptyFields() {
 
 function submitActive() {
     if (emptyFields() === true) {
-      suButton.disabled = true;
+      suButton.disabled === true;
     return false;
     } else {
-      suButton.disabled = false;
+      suButton.disabled === false;
      return true;
   }
 }
+console.log(submitActive());
 
 function setAttributes(elements, attributes) {
     Object.keys(attributes).forEach(function(name) {
@@ -144,9 +150,8 @@ function addChore() {
     choreList.push(newChore);
     app.appendChild(newLi);
     // clearFields();
-    // submitActive();
+    submitActive();
     noChores();
-    console.log(addChore);
     return false; 
 }
 
