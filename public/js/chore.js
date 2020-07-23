@@ -50,9 +50,7 @@ window.onclick = function(event) {
 function emptyFields() {
     const choreLength = document.getElementById('choreSelect').selectedIndex === 0;
     const famMembersLength = document.getElementById('famMembers').selectedIndex === 0;
-    console.log(choreLength);
-    console.log(famMembersLength);
-    if (choreLength === false && famMembersLength === false) {
+    if (choreLength === false && famMembersLength === false) { 
         return false;
     }
     return true;
@@ -60,14 +58,13 @@ function emptyFields() {
 
 function submitActive() {
     if (emptyFields() === true) {
-      suButton.disabled === true;
+      suButton.disabled = true;
     return false;
     } else {
-      suButton.disabled === false;
+      suButton.disabled = false;
      return true;
   }
 }
-console.log(submitActive());
 
 function setAttributes(elements, attributes) {
     Object.keys(attributes).forEach(function(name) {
@@ -149,7 +146,7 @@ function addChore() {
     editModeDiv.appendChild(cancelbtn);
     choreList.push(newChore);
     app.appendChild(newLi);
-    // clearFields();
+    clearFields();
     submitActive();
     noChores();
     return false; 
