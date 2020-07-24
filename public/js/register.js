@@ -51,7 +51,6 @@ function addFamilyMember() {
     famValues.text = `${newFamilyMember.name}`;
     
     familyMemberAdd.add(famValues);
-    
     fam.appendChild(familyLi);
     familyList.push(newFamilyMember);
     familyLi.appendChild(familyInfo);

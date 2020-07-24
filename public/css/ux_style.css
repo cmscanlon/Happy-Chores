@@ -23,7 +23,6 @@ body {
 .page {
     display: flex;
     flex-direction: row;
-    
 }
 
 .add-btn {
@@ -45,7 +44,6 @@ body {
 
 .chore-form input[type="submit"]:disabled {
     background: var(--light-text);
-    /* color: var(--button); */
   }
 
 /********Navigation Sidebar**********/
@@ -67,7 +65,9 @@ body {
 
 .chore-nav {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     font-family: 'Proxima Nova Bold';
     font-size: 16px;
     text-transform: uppercase;
@@ -80,8 +80,10 @@ body {
 }
 
 .tablinks {
+    display: flex;
+    flex-direction: column;
     font-size: 16px;
-    margin-left: 50px;
+    width: 100%;
     color: var(--light-text);
     letter-spacing: 0;
     line-height: 20px;
@@ -95,31 +97,8 @@ body {
     font-family: 'Proxima Nova Bold';
 }
 
-.chore-nav-rooms ul {
-    font-family: 'Proxima Nova Regular';
-    list-style: none;
-    color: var(--text);
-    font-size: 16px;
-    margin-top: 32px;
-    margin-left: 50px;
-    line-height: 20px;
-    color: var(--text);
-}
-
-.chore-nav-rooms li {
-    margin-bottom: 42px;
-    line-height: 20px;
-}
-
-.chore-nav-rooms li a {
-    color: #2B2826;
-    text-decoration: none;
-}
-
-.chore-nav-rooms li:hover {
-    width: 32%;
-    border-bottom: 3px solid var(--text);
-    font-family: 'Proxima Nova Bold';
+.chore-nav-header {
+    margin-bottom: 5%;
 }
 
 /***********Chore Main Content********/

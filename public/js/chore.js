@@ -103,7 +103,7 @@ function addChore() {
     setAttributes(choreDescription, {type: 'text', role: 'rowgroup', class: 'flex-table-row'});
     
     const choreName = document.createElement('div');
-    setAttributes(choreName, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-name', value: `${newChore.name}`});
+    setAttributes(choreName, {type: 'text', role: 'cell', class: 'flex-row', id: `${newChore.name}`, value: `${newChore.name}`});
     choreName.textContent = `${newChore.name}`;
 
     const choreOwner = document.createElement('div');
@@ -124,6 +124,9 @@ function addChore() {
     const editInput2 = document.createElement('input');
     setAttributes(editInput2, {class: 'edit2', id: 'edit2', type: 'text', value: `${newChore.assignee}`});
 
+    const editInput3 = document.createElement('input');
+    setAttributes(editInput3, {class: 'edit3', id: 'edit3', type: 'text', value: `${newChore.date}`});
+
     const cancelbtn = document.createElement('input');
     setAttributes(cancelbtn, {type: 'image', src: 'img/close-outline.svg', class: 'cancel', onclick: 'cancelEdit(event)'});
 
@@ -132,23 +135,31 @@ function addChore() {
     
     choreDescription.appendChild(checkbtn);
     readOnlyDiv.appendChild(choreDescription);
+
     choreDescription.appendChild(choreName);
     choreDescription.appendChild(choreOwner);
     choreDescription.appendChild(choreDueDate);
     choreDescription.appendChild(choreDateAssign);
     choreDescription.appendChild(editbtn);
     choreDescription.appendChild(delbtn);
+
     newLi.appendChild(readOnlyDiv);
     newLi.appendChild(editModeDiv);
+
     editModeDiv.appendChild(editInput1);
     editModeDiv.appendChild(editInput2);
+    editModeDiv.appendChild(editInput3);
     editModeDiv.appendChild(savebtn);
     editModeDiv.appendChild(cancelbtn);
+
     choreList.push(newChore);
+
     app.appendChild(newLi);
+
     clearFields();
     submitActive();
     noChores();
+
     return false; 
 }
 
@@ -176,13 +187,21 @@ function cancelEdit(event) {
 function saveChore(event) {
     const newEditChore = {
         editName: event.target.closest('li').querySelector('.edit').value,
-        editAssignee: event.target.closest('li').querySelector('.edit2').value
+        editAssignee: event.target.closest('li').querySelector('.edit2').value,
+        editDate: event.target.closest('li').querySelector('.edit3').value
     }
     cancelEdit(event);
-    const editDescription = event.target.closest('li').querySelector('span');
-    editDescription.textContent = `${newEditChore.editName} ${newEditChore.editAssignee}`;
+    const editModeName = event.target.closest('li').querySelector('div');
+    const editModeChore = event.target.closest('li').querySelector('div');
+    const editModeDate = event.target.closest('li').querySelector('div');
+    
+    editModeName.textContent = `${newEditChore.editName}`;
+    editModeChore.textContent =  `${newEditChore.editAssignee}`;
+    console.log(editModeName);
+    console.log(editModeChore);
     choreList.push(newEditChore);
 }
+
 
 function noChores() {
     const noChoreDiv = document.getElementById("noChore");
