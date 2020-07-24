@@ -180,7 +180,7 @@ function saveChore(event) {
     }
     cancelEdit(event);
     const editDescription = event.target.closest('li').querySelector('span');
-    editDescription.textContent = `Chore: ${newEditChore.editName} - Assigned to: ${newEditChore.editAssignee}`;
+    editDescription.textContent = `${newEditChore.editName} ${newEditChore.editAssignee}`;
     choreList.push(newEditChore);
 }
 
