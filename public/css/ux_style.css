@@ -43,7 +43,7 @@ body {
     background: var(--button);
 }
 
-.chore-form input[type="submit"]:disabled {
+#chore-form input[type="submit"]:disabled {
     background: var(--light-text);
     /* color: var(--button); */
   }
