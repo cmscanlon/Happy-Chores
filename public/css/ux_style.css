@@ -55,7 +55,7 @@ body {
     margin-left: 47px;
 }
 
-.sidebar-nav {
+.sidebar {
     display: inline-flex;
     flex-direction: column;
     width: 330px;

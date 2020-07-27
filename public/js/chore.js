@@ -103,7 +103,8 @@ function addChore() {
     setAttributes(choreDescription, {type: 'text', role: 'rowgroup', class: 'flex-table-row'});
     
     const choreName = document.createElement('div');
-    setAttributes(choreName, {type: 'text', role: 'cell', class: 'flex-row', id: `${newChore.name}`, value: `${newChore.name}`});
+    setAttributes(choreName, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-name'});
+    // id: `${newChore.name}`, value: `${newChore.name}`
     choreName.textContent = `${newChore.name}`;
 
     const choreOwner = document.createElement('div');
@@ -191,14 +192,14 @@ function saveChore(event) {
         editDate: event.target.closest('li').querySelector('.edit3').value
     }
     cancelEdit(event);
-    const editModeName = event.target.closest('li').querySelector('div');
-    const editModeChore = event.target.closest('li').querySelector('div');
-    const editModeDate = event.target.closest('li').querySelector('div');
+    const editModeName = document.getElementById('flex-row-owner');
+    const editModeChore = document.getElementById('flex-row-name');
+    const editModeDate = document.getElementById('flex-row-date');
+
+    editModeName.textContent = `${newEditChore.editAssignee}`;
+    editModeChore.textContent =  `${newEditChore.editName}`;
+    editModeDate.textContent = `${newEditChore.editDate}`;
     
-    editModeName.textContent = `${newEditChore.editName}`;
-    editModeChore.textContent =  `${newEditChore.editAssignee}`;
-    console.log(editModeName);
-    console.log(editModeChore);
     choreList.push(newEditChore);
 }
 
