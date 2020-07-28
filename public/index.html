@@ -90,7 +90,8 @@
         <div class="chore-modal-form">
             <form name="choreForm" id="chore-form"  onsubmit="return addChore()" autocomplete="on">
                 <label for="chore-label">Chore</label><br>
-                    <select name="chore-select" id="choreSelect">
+                    <select name="chore-select" id="choreSelect" onchange="submitActive()">
+                        <option>Choose a chore</option>
                         <option>Bathroom</option>
                         <option>Bedroom</option>
                         <option>Kitchen</option>
@@ -98,7 +99,9 @@
                         <option>Yard</option>
                     </select><br>
                 <label for "familyMembers">Assign to</label><br>
-                    <select name="famMembers" id="famMembers"></select><br>
+                    <select name="famMembers" id="famMembers" onchange="submitActive()">
+                        <option>Select Family Member</option>
+                    </select><br>
                 <label for="date-assigned">Date Assigned</label><br>
                     <select name="dateAssign" id="dateAssign">
                         <option>07/20/2020</option>
@@ -109,7 +112,7 @@
                     </select><br>
                 <label for="notes">Notes</label><br>
                 <textarea name="note-text" id="note-text" cols="30" rows="10"></textarea><br>
-                <input type="submit" class="save-chore" value="Save Chore" id="submit" />
+                <input type="submit" class="save-chore" value="Save Chore" id="submit" disabled/>
             </form>
         </div>
     </div>
