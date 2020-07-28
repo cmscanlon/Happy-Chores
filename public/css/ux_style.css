@@ -282,6 +282,14 @@ input {
     justify-content: left;
 }
 
+ul li div {
+    text-decoration: none;
+}
+
+ul li input[type=checkbox]:checked ~ div {
+    text-decoration: line-through;
+}
+
 
 /************Family***************/
 
