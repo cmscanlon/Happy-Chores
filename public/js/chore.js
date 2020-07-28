@@ -72,7 +72,7 @@ function setAttributes(elements, attributes) {
 function addChore() {
 
     const checkbtn = document.createElement('input');
-    setAttributes(checkbtn, {type: 'image', role: 'cell', src: 'img/stop-outline.svg', class: 'flex-row', value: "Check", }); 
+    setAttributes(checkbtn, {type: 'checkbox', role: 'cell', class: 'flex-row', value: "Check", id: 'chore-checkbox'}); 
 
     const delbtn = document.createElement('input');
     setAttributes(delbtn, {type: 'image', role: 'cell', src: 'img/trash-outline.svg', class: 'flex-row', value: "Delete", onclick: 'deleteChore(event)'});
@@ -146,7 +146,7 @@ function addChore() {
     // clearFields();
     // submitActive();
     noChores();
-    console.log(addChore);
+    // updateItem();
     return false; 
 }
 
@@ -181,6 +181,15 @@ function saveChore(event) {
     editDescription.textContent = `Chore: ${newEditChore.editName} - Assigned to: ${newEditChore.editAssignee}`;
     choreList.push(newEditChore);
 }
+
+// function updateItem() {
+//     if (this.checked) {
+//         this.parentNode.style.textDecoration = 'line-through';
+//     } else {
+//         this.parentNode.style.textDecoration = 'none';
+//     }
+// }
+
 
 function noChores() {
     const noChoreDiv = document.getElementById("noChore");
