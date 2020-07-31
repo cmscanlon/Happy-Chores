@@ -39,6 +39,7 @@ function addFamilyMember() {
     const newFamilyMember = {
         name: document.getElementById('fname').value
     }
+    
     const familyLi = document.createElement('li');
     setAttributes(familyLi, {class: 'family-li', id: `${newFamilyMember.name}` });
     

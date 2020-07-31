@@ -14,6 +14,7 @@ const choreTable = document.getElementById('choreTable');
 const famModal = document.getElementById("famOverlay");
 const famBtn = document.getElementById("add-fam");
 const famSpan = document.getElementsByClassName("famClose")[0];
+const familyMemberSelect = document.getElementById('famMembers');
 
 /************Chore Modal ************/
 
@@ -119,7 +120,15 @@ function addChore() {
     choreDueDate.textContent = `${newChore.date}`;
 
     const editInput1 = document.createElement('select');
-    setAttributes(editInput1, {class: 'edit', id: 'edit', type: 'select', option: `${newChore.name}` });
+    setAttributes(editInput1, {class: 'edit', id: 'edit', value: `${newChore.name}` });
+
+    const inputData = ["Bathroom", "Bedroom", "Kitchen", "Family Room", "Yard"];
+
+    inputData.forEach(function(item) {
+        editOption = document.createElement('option');
+        editOption.value = editOption.textContent = item;
+        editInput1.appendChild(editOption);
+    });
 
     const editInput2 = document.createElement('input');
     setAttributes(editInput2, {class: 'edit2', id: 'edit2', type: 'text', value: `${newChore.assignee}`});
@@ -132,10 +141,6 @@ function addChore() {
 
     const savebtn = document.createElement('input');
     setAttributes(savebtn, {type: 'image', src: 'img/checkmark-outline.svg', class: 'save', onclick: 'saveChore(event)'});
-    
-    const famValues = document.createElement('option');
-    setAttributes(famValues, {id: `${newFamilyMember.name}`});
-    famValues.text = `${newFamilyMember.name}`;
     
     choreDescription.appendChild(checkbtn);
     readOnlyDiv.appendChild(choreDescription);
@@ -150,8 +155,8 @@ function addChore() {
     newLi.appendChild(readOnlyDiv);
     newLi.appendChild(editModeDiv);
 
-    
     editModeDiv.appendChild(editInput1);
+    editInput1.appendChild(editOption);
     editModeDiv.appendChild(editInput2);
     editModeDiv.appendChild(editInput3);
     editModeDiv.appendChild(savebtn);
@@ -160,6 +165,8 @@ function addChore() {
     choreList.push(newChore);
 
     app.appendChild(newLi);
+
+    // familyMembersSelect.add(famValues);
 
     clearFields();
     submitActive();
