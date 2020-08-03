@@ -43,10 +43,19 @@ body {
     background: var(--button);
 }
 
+.tabcontent {
+    height: 980px;
+    width: 1024px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
 #chore-form input[type="submit"]:disabled {
     background: var(--light-text);
     /* color: var(--button); */
   }
+
 
 /********Navigation Sidebar**********/
 
@@ -57,11 +66,20 @@ body {
     margin-left: 47px;
 }
 
+section.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 1024px;
+    margin-left: 15%;
+    background-color: var(--highlight);
+}
+
 .sidebar-nav {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
     width: 330px;
-    height: 1024px;
+    height: 100%;
     background-color: var(--highlight);
 }
 
@@ -124,9 +142,15 @@ body {
 
 /***********Chore Main Content********/
 
+.chore-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .top-header {
     display: flex;
     flex-direction: row;
+    height: 
 }
 
 .date {
@@ -138,6 +162,8 @@ body {
     line-height: 42px;
     margin-top: 77px;
     margin-left: 48px;
+    height: 42px;
+    width: 400px;
 }
 
 .chore-counter {
@@ -294,6 +320,11 @@ input {
 
 /************Family***************/
 
+.family-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .family-list-header {
     color: #000000;
     font-family: "Proxima Nova Bold";
@@ -305,12 +336,16 @@ input {
     margin-left: 48px;
 }
 
+.family-button {
+    
+}
+
 .family-nav-header.tablinks {
     line-height: 0;
     /* margin-left: 10px; */
 }
 
-.family-container {
+.family-member-container {
     height: 408px;
     width: 285px;
     border-radius: 12px;
