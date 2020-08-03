@@ -14,7 +14,6 @@ const choreTable = document.getElementById('choreTable');
 const famModal = document.getElementById("famOverlay");
 const famBtn = document.getElementById("add-fam");
 const famSpan = document.getElementsByClassName("famClose")[0];
-const familyMemberSelect = document.getElementById('famMembers');
 
 /************Chore Modal ************/
 
@@ -130,8 +129,11 @@ function addChore() {
         editInput1.appendChild(editOption);
     });
 
-    const editInput2 = document.createElement('input');
-    setAttributes(editInput2, {class: 'edit2', id: 'edit2', type: 'text', value: `${newChore.assignee}`});
+    const editInput2 = document.createElement('select');
+    setAttributes(editInput2, {class: 'edit2', id: 'famMemberEdit'});
+
+    // const editFamOption = document.createElement('option');
+    // setAttributes(editFamOption, {id: 'famMembers'});
 
     const editInput3 = document.createElement('input');
     setAttributes(editInput3, {class: 'edit3', id: 'edit3', type: 'text', value: `${newChore.date}`});
@@ -157,6 +159,7 @@ function addChore() {
 
     editModeDiv.appendChild(editInput1);
     editInput1.appendChild(editOption);
+    // editInput2.appendChild(editFamOption);
     editModeDiv.appendChild(editInput2);
     editModeDiv.appendChild(editInput3);
     editModeDiv.appendChild(savebtn);
@@ -165,8 +168,6 @@ function addChore() {
     choreList.push(newChore);
 
     app.appendChild(newLi);
-
-    // familyMembersSelect.add(famValues);
 
     clearFields();
     submitActive();
