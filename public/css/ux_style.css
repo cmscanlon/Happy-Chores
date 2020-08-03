@@ -43,14 +43,6 @@ body {
     background: var(--button);
 }
 
-.tabcontent {
-    height: 980px;
-    width: 1024px;
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
-
 #chore-form input[type="submit"]:disabled {
     background: var(--light-text);
     /* color: var(--button); */
