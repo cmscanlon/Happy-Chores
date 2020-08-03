@@ -51,6 +51,12 @@ body {
     border: 0;
 }
 
+#chore-form input[type="submit"]:disabled {
+    background: var(--light-text);
+    /* color: var(--button); */
+  }
+
+
 /********Navigation Sidebar**********/
 
 .logo {

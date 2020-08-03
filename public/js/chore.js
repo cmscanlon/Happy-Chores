@@ -7,6 +7,7 @@ const app = document.querySelector('.chore-list');
 const chore = document.getElementById('choreSelect');
 const assign = document.getElementById('famMembers');
 const date = document.getElementById('due-date-select');
+const dateAssign = document.getElementById('dateAssign');
 const suButton = document.getElementById('submit');
 const choreTable = document.getElementById('choreTable');
 
@@ -47,7 +48,9 @@ window.onclick = function(event) {
 }
 
 function emptyFields() {
-    if (choreSelect.value !== '' && famMembers.value !== '' ) {
+    const choreLength = document.getElementById('choreSelect').selectedIndex === 0;
+    const famMembersLength = document.getElementById('famMembers').selectedIndex === 0;
+    if (choreLength === false && famMembersLength === false) { 
         return false;
     }
     return true;
@@ -143,10 +146,9 @@ function addChore() {
     editModeDiv.appendChild(cancelbtn);
     choreList.push(newChore);
     app.appendChild(newLi);
-    // clearFields();
-    // submitActive();
+    clearFields();
+    submitActive();
     noChores();
-    console.log(addChore);
     return false; 
 }
 
@@ -178,7 +180,7 @@ function saveChore(event) {
     }
     cancelEdit(event);
     const editDescription = event.target.closest('li').querySelector('span');
-    editDescription.textContent = `Chore: ${newEditChore.editName} - Assigned to: ${newEditChore.editAssignee}`;
+    editDescription.textContent = `${newEditChore.editName} ${newEditChore.editAssignee}`;
     choreList.push(newEditChore);
 }
 
