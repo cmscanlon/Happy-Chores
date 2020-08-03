@@ -134,8 +134,8 @@ function addChore() {
     readOnlyDiv.appendChild(choreDescription);
     choreDescription.appendChild(choreName);
     choreDescription.appendChild(choreOwner);
-    choreDescription.appendChild(choreDateAssign);
     choreDescription.appendChild(choreDueDate);
+    choreDescription.appendChild(choreDateAssign);
     choreDescription.appendChild(editbtn);
     choreDescription.appendChild(delbtn);
     newLi.appendChild(readOnlyDiv);
