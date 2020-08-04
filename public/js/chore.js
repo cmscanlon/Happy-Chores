@@ -132,9 +132,6 @@ function addChore() {
     const editInput2 = document.createElement('select');
     setAttributes(editInput2, {class: 'edit2', id: 'famMemberEdit'});
 
-    // const editFamOption = document.createElement('option');
-    // setAttributes(editFamOption, {id: 'famMembers'});
-
     const editInput3 = document.createElement('input');
     setAttributes(editInput3, {class: 'edit3', id: 'edit3', type: 'text', value: `${newChore.date}`});
 
@@ -159,7 +156,6 @@ function addChore() {
 
     editModeDiv.appendChild(editInput1);
     editInput1.appendChild(editOption);
-    // editInput2.appendChild(editFamOption);
     editModeDiv.appendChild(editInput2);
     editModeDiv.appendChild(editInput3);
     editModeDiv.appendChild(savebtn);
@@ -182,12 +178,26 @@ function deleteChore(event) {
         chores.parentNode.removeChild(event.target.closest('li'));
     }
 }
+const editModeDiv = document.getElementById('div2');
 
 function editMode(event) {
     const read = event.target.closest('.div1');
     const edit = event.target.closest('li').querySelector('.div2');
     read.style.display = 'none';
     edit.style.display = 'block'; 
+
+    // const newFamilyMember = {
+    //     name: document.getElementById('fname').value
+    // }
+
+    // const famEditValues = document.createElement('option');
+    // setAttributes(famEditValues, {id: `${newFamilyMember.name}`});
+    // famEditValues.text = `${newFamilyMember.name}`;
+
+    // // famMemberEdit.add(famEditValues);
+    // editModeDiv.appendChild(famMemberEdit);
+    // app.appendChild(famMemberEdit);
+
 }
 
 function cancelEdit(event) {

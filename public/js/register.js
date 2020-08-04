@@ -52,13 +52,8 @@ function addFamilyMember() {
     const famValues = document.createElement('option');
     setAttributes(famValues, {id: `${newFamilyMember.name}`});
     famValues.text = `${newFamilyMember.name}`;
-
-    // const famEditValues = document.createElement('option');
-    // setAttributes(famEditValues, {id: `${newFamilyMember.name}`});
-    // famEditValues.text = `${newFamilyMember.name}`;
     
     familyMemberAdd.add(famValues);
-    // famMemberEdit.add(famEditValues);
     fam.appendChild(familyLi);
     familyList.push(newFamilyMember);
     familyLi.appendChild(familyInfo);
