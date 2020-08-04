@@ -130,7 +130,7 @@ function addChore() {
     });
 
     const editInput2 = document.createElement('select');
-    setAttributes(editInput2, {class: 'edit2', id: 'famMemberEdit'});
+    setAttributes(editInput2, {class: 'edit2', id: 'famMemberEdit', value: });
 
     const editInput3 = document.createElement('input');
     setAttributes(editInput3, {class: 'edit3', id: 'edit3', type: 'text', value: `${newChore.date}`});
@@ -186,9 +186,7 @@ function editMode(event) {
     read.style.display = 'none';
     edit.style.display = 'block'; 
 
-    // const familyData = document.querySelectorAll('#familyList');
-    const famMemberEdit = document.getElementById('famMemberEdit');
-console.log(familyList);
+    const famMemberEdit = event.target.closest('li').querySelector('#famMemberEdit');
 
     familyList.forEach(function(item) {
         editFamOption = document.createElement('option');
@@ -204,7 +202,7 @@ function cancelEdit(event) {
     read.style.display = 'block';
     edit.style.display = 'none'; 
 
-    document.getElementById('famMemberEdit').options.length = 0;
+    event.target.closest('li').querySelector('#famMemberEdit').options.length = 0;
 
 }
 
@@ -225,7 +223,7 @@ function saveChore(event) {
     
     choreList.push(newEditChore);
 
-    document.getElementById('famMemberEdit').options.length = 0;
+    event.target.closest('li').querySelector('#famMemberEdit').options.length = 0;
 }
 
 function noChores() {
