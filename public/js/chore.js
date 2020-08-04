@@ -186,18 +186,16 @@ function editMode(event) {
     read.style.display = 'none';
     edit.style.display = 'block'; 
 
-    // const newFamilyMember = {
-    //     name: document.getElementById('fname').value
-    // }
+    // const familyData = document.querySelectorAll('#familyList');
+    const famMemberEdit = document.getElementById('famMemberEdit');
+console.log(familyList);
 
-    // const famEditValues = document.createElement('option');
-    // setAttributes(famEditValues, {id: `${newFamilyMember.name}`});
-    // famEditValues.text = `${newFamilyMember.name}`;
-
-    // // famMemberEdit.add(famEditValues);
-    // editModeDiv.appendChild(famMemberEdit);
-    // app.appendChild(famMemberEdit);
-
+    familyList.forEach(function(item) {
+        editFamOption = document.createElement('option');
+        editFamOption.value = item.name;
+        editFamOption.textContent = item.name;
+        famMemberEdit.appendChild(editFamOption);
+    });
 }
 
 function cancelEdit(event) {
@@ -205,6 +203,9 @@ function cancelEdit(event) {
     const edit = event.target.closest('li').querySelector('.div2');
     read.style.display = 'block';
     edit.style.display = 'none'; 
+
+    document.getElementById('famMemberEdit').options.length = 0;
+
 }
 
 function saveChore(event) {
@@ -223,6 +224,8 @@ function saveChore(event) {
     editModeDate.textContent = `${newEditChore.editDate}`;
     
     choreList.push(newEditChore);
+
+    document.getElementById('famMemberEdit').options.length = 0;
 }
 
 function noChores() {
