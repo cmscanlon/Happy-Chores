@@ -130,7 +130,7 @@ function addChore() {
     });
 
     const editInput2 = document.createElement('select');
-    setAttributes(editInput2, {class: 'edit2', id: 'famMemberEdit', value: });
+    setAttributes(editInput2, {class: 'edit2', id: 'famMemberEdit', value: `${newChore.assignee}`});
 
     const editInput3 = document.createElement('input');
     setAttributes(editInput3, {class: 'edit3', id: 'edit3', type: 'text', value: `${newChore.date}`});
@@ -213,13 +213,15 @@ function saveChore(event) {
         editDate: event.target.closest('li').querySelector('.edit3').value
     }
     cancelEdit(event);
-    const editModeName = document.getElementById('flex-row-owner');
-    const editModeChore = document.getElementById('flex-row-name');
-    const editModeDate = document.getElementById('flex-row-date');
+    const editModeName = event.target.closest('li').querySelector('#flex-row-owner');
+    const editModeChore = event.target.closest('li').querySelector('#flex-row-name');
+    const editModeDate = event.target.closest('li').querySelector('#flex-row-date');
 
     editModeName.textContent = `${newEditChore.editAssignee}`;
     editModeChore.textContent =  `${newEditChore.editName}`;
     editModeDate.textContent = `${newEditChore.editDate}`;
+    
+    cancelEdit(event);
     
     choreList.push(newEditChore);
 
