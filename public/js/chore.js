@@ -103,7 +103,7 @@ function addChore() {
     setAttributes(choreDescription, {type: 'text', role: 'rowgroup', class: 'flex-table-row'});
     
     const choreName = document.createElement('div');
-    setAttributes(choreName, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-name', value: `${newChore.name}`});
+    setAttributes(choreName, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-name'});
     choreName.textContent = `${newChore.name}`;
 
     const choreOwner = document.createElement('div');
@@ -118,11 +118,22 @@ function addChore() {
     setAttributes(choreDueDate, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-date'});
     choreDueDate.textContent = `${newChore.date}`;
 
-    const editInput1 = document.createElement('input');
-    setAttributes(editInput1, {class: 'edit', id: 'edit', type: 'text', value: `${newChore.name}` });
+    const editInput1 = document.createElement('select');
+    setAttributes(editInput1, {class: 'edit', id: 'edit', value: `${newChore.name}` });
 
-    const editInput2 = document.createElement('input');
-    setAttributes(editInput2, {class: 'edit2', id: 'edit2', type: 'text', value: `${newChore.assignee}`});
+    const inputData = ["Bathroom", "Bedroom", "Kitchen", "Family Room", "Yard"];
+
+    inputData.forEach(function(item) {
+        editOption = document.createElement('option');
+        editOption.value = editOption.textContent = item;
+        editInput1.appendChild(editOption);
+    });
+
+    const editInput2 = document.createElement('select');
+    setAttributes(editInput2, {class: 'edit2', id: 'famMemberEdit', value: `${newChore.assignee}`});
+
+    const editInput3 = document.createElement('input');
+    setAttributes(editInput3, {class: 'edit3', id: 'edit3', type: 'text', value: `${newChore.date}`});
 
     const cancelbtn = document.createElement('input');
     setAttributes(cancelbtn, {type: 'image', src: 'img/close-outline.svg', class: 'cancel', onclick: 'cancelEdit(event)'});
@@ -132,23 +143,32 @@ function addChore() {
     
     choreDescription.appendChild(checkbtn);
     readOnlyDiv.appendChild(choreDescription);
+
     choreDescription.appendChild(choreName);
     choreDescription.appendChild(choreOwner);
     choreDescription.appendChild(choreDueDate);
     choreDescription.appendChild(choreDateAssign);
     choreDescription.appendChild(editbtn);
     choreDescription.appendChild(delbtn);
+
     newLi.appendChild(readOnlyDiv);
     newLi.appendChild(editModeDiv);
+
     editModeDiv.appendChild(editInput1);
+    editInput1.appendChild(editOption);
     editModeDiv.appendChild(editInput2);
+    editModeDiv.appendChild(editInput3);
     editModeDiv.appendChild(savebtn);
     editModeDiv.appendChild(cancelbtn);
+
     choreList.push(newChore);
+
     app.appendChild(newLi);
+
     clearFields();
     submitActive();
     noChores();
+
     return false; 
 }
 
@@ -158,12 +178,22 @@ function deleteChore(event) {
         chores.parentNode.removeChild(event.target.closest('li'));
     }
 }
+const editModeDiv = document.getElementById('div2');
 
 function editMode(event) {
     const read = event.target.closest('.div1');
     const edit = event.target.closest('li').querySelector('.div2');
     read.style.display = 'none';
     edit.style.display = 'block'; 
+
+    const famMemberEdit = event.target.closest('li').querySelector('#famMemberEdit');
+
+    familyList.forEach(function(item) {
+        editFamOption = document.createElement('option');
+        editFamOption.value = item.name;
+        editFamOption.textContent = item.name;
+        famMemberEdit.appendChild(editFamOption);
+    });
 }
 
 function cancelEdit(event) {
@@ -171,17 +201,31 @@ function cancelEdit(event) {
     const edit = event.target.closest('li').querySelector('.div2');
     read.style.display = 'block';
     edit.style.display = 'none'; 
+
+    event.target.closest('li').querySelector('#famMemberEdit').options.length = 0;
+
 }
 
 function saveChore(event) {
     const newEditChore = {
         editName: event.target.closest('li').querySelector('.edit').value,
-        editAssignee: event.target.closest('li').querySelector('.edit2').value
+        editAssignee: event.target.closest('li').querySelector('.edit2').value,
+        editDate: event.target.closest('li').querySelector('.edit3').value
     }
     cancelEdit(event);
-    const editDescription = event.target.closest('li').querySelector('span');
-    editDescription.textContent = `${newEditChore.editName} ${newEditChore.editAssignee}`;
+    const editModeName = event.target.closest('li').querySelector('#flex-row-owner');
+    const editModeChore = event.target.closest('li').querySelector('#flex-row-name');
+    const editModeDate = event.target.closest('li').querySelector('#flex-row-date');
+
+    editModeName.textContent = `${newEditChore.editAssignee}`;
+    editModeChore.textContent =  `${newEditChore.editName}`;
+    editModeDate.textContent = `${newEditChore.editDate}`;
+    
+    cancelEdit(event);
+    
     choreList.push(newEditChore);
+
+    event.target.closest('li').querySelector('#famMemberEdit').options.length = 0;
 }
 
 function noChores() {

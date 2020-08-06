@@ -3,6 +3,7 @@ const fam = document.querySelector('.family-list');
 const firstName = document.getElementById('fname');
 const subFamButton = document.getElementById('familySubmit');
 const familyMemberAdd = document.getElementById('famMembers');
+const familyMemberEdit = document.getElementById('famMemberEdit');
 
 function emptyFamFields() {
     if (firstName.value !== '') {
@@ -20,6 +21,7 @@ function submitButtonActive() {
      return true;
   }
 }
+
 function setAttributes(elements, attributes) {
     Object.keys(attributes).forEach(function(name) {
         elements.setAttribute(name, attributes[name]);
@@ -39,6 +41,7 @@ function addFamilyMember() {
     const newFamilyMember = {
         name: document.getElementById('fname').value
     }
+
     const familyLi = document.createElement('li');
     setAttributes(familyLi, {class: 'family-li', id: `${newFamilyMember.name}` });
     
@@ -51,7 +54,6 @@ function addFamilyMember() {
     famValues.text = `${newFamilyMember.name}`;
     
     familyMemberAdd.add(famValues);
-    
     fam.appendChild(familyLi);
     familyList.push(newFamilyMember);
     familyLi.appendChild(familyInfo);
