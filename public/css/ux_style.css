@@ -25,7 +25,6 @@ body {
 }
 
 .add-btn {
-    /* margin-left: 45vw; */
     margin-left: auto;
     margin-top: 29px;
     height: 43px;
@@ -45,8 +44,6 @@ body {
 .top-header {
     display: flex;
     flex-direction: row;
-    /* width: 100%; */
-    /* height: 200px; */
     padding: 48px;
 }
 
@@ -58,9 +55,7 @@ body {
     letter-spacing: 0;
     line-height: 42px;
     margin-top: 29px;
-
     height: 42px;
-    /* width: 100% */
 }
 
 .tabcontent {
@@ -76,7 +71,7 @@ body {
   }
 
 
-/********Navigation Sidebar**********/
+/********Sidebar**********/
 
 .logo {
     width: 237px;
@@ -89,7 +84,6 @@ section.sidebar {
     display: flex;
     flex: 0 0 320px;
     flex-flow: column nowrap;
-    /* min-width: 320px; */
     height: 1024px;
     background-color: var(--highlight);
 }
@@ -161,10 +155,8 @@ section.sidebar {
 
 /***********Chore Main Content********/
 
-.chore-container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
+.chore {
+    padding: 48px;
 }
 
 .chore-content {
@@ -182,7 +174,6 @@ section.sidebar {
     height: 208px;
     border-radius: 12px;
     background-color: var(--highlight);
-    /* margin-top: 16px; */
     margin-left: 48px;
 }
 
@@ -213,7 +204,6 @@ section.sidebar {
     width: 285px;
     border-radius: 12px;
     background-color: var(--highlight);
-    /* margin-top: 64px; */
     margin-left: 69px;
 }
 
@@ -250,11 +240,6 @@ section.sidebar {
     text-transform: uppercase;
     margin-top: 80px;
     margin-left: 48px;
-}
-
-.chore {
-    /* width: 100%; */
-    padding: 48px;
 }
 
 .main-chore-list {
@@ -305,11 +290,6 @@ input {
     margin-left: 1px;
 }
 
-/* .choresListSpan {
-    display: flex;
-    flex-direction: row wrap;
-} */
-
 .flex-table-row {
     display: flex;
     flex-flow: row;
@@ -329,11 +309,6 @@ input {
 
 /************Family***************/
 
-.family-container {
-    display: flex;
-    flex-direction: row;
-}
-
 .family-list {
     color: var(--text);
     font-family: "Proxima Nova Regular";
@@ -347,7 +322,6 @@ input {
 
 .family-nav-header.tablinks {
     line-height: 0;
-    /* margin-left: 10px; */
 }
 
 .family-member-container {
@@ -357,8 +331,8 @@ input {
     width: 285px;
     border-radius: 12px;
     background-color: var(--highlight);
-    margin-top: 64px;
-    margin-left: 48px;
+    margin-left: 64px;
+    margin-top: 14.5px;
 }
 
 .family-member {
@@ -394,7 +368,7 @@ input {
 }
 
 
-/*  Buttons  */
+/**********  Buttons  ************/
 
 
 .delete {
@@ -403,34 +377,27 @@ input {
 	height: 15px;
     padding: 0 10px;
     color: rgba(0,0,0,0.6);
-    /* margin-left: 51px; */
     fill: var(--button);
 }
 
 .editbtn {
 	width: 20px;
-	height: 20px;
-    /* padding: 0 0 0 50px;
-    margin-left: 113px; */
-    
+	height: 20px; 
 }
 
 .save {
 	width: 20px;
 	height: 20px;
-	/* padding: 0 5px; */
 }
 
 .cancel {
 	width: 20px;
 	height: 20px;
-	/* padding: 0 10px; */
 }
 
 .check {
     width: 18px;
     height: 18px;
-    /* padding: 0 10px 0 10px; */
     color: rgba(0,0,0,0.6);
 }
 
