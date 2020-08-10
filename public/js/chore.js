@@ -207,7 +207,7 @@ function clearFields() {
             break;
         case "select-one":
         // case "select-multi":
-            // elements[i].selectedIndex = -1;
+            elements[i].selectedIndex = 0;
             break;
         default:
             break;
