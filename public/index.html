@@ -11,9 +11,6 @@
 <body> 
 
 <div id="page" class="page"> 
-
-<div id="choreTab" class="tabcontent">
-    <div class="chore-container">
     <section class="sidebar">
         <div class="sidebar-nav">    
             <div class="top-logo">
@@ -37,43 +34,43 @@
                     <li><a href="kitchen.html">Kitchen</a></li>
                 </ul>
             </div>
-        
-        </div>
     </section>
-<div class="chore-content">
-    <div class="top-header">
-        <div class="date">Wednesday August 5, 2020</div>
-            <button class="add-btn" id="add-chore">Add Chore</button>
-    </div>
-    <div class="chore-counter">
-        <div class="completed-container">
-            <div class="completed">Completed</div>
-            <div class="completed-number">0</div>
-        </div>
-        <div class="remaining-container">
-            <div class="remaining">Remaining</div>
-            <div class="remaining-number">3</div>
-        </div>
-    </div>
-    <div class="main-chore-header">Chores</div>
-    <div class="chore">
-        <div class="main-chore-list">
-            <div class="chore-list-header" role="rowgroup">
-                <div class="flex-row" role="columnheader" id="chore-name"></div>
-                <div class="flex-row" role="columnheader" id="chore-name">Chore Name</div>
-                <div class="flex-row" role="columnheader" id="chore-owner">Owner</div>
-                <div class="flex-row" role="columnheader" id="chore-date-assigned">Date Assigned</div>
-                <div class="flex-row" role="columnheader" id="chore-date-due">Due Date</div>
-                <div class="flex-row" role="columnheader" id="chore-name"></div>
-                <div class="flex-row" role="columnheader" id="chore-name"></div>
+<div id="choreTab" class="tabcontent">
+  
+        <div class="chore-content">
+            <div class="top-header">
+                <div class="date">Wednesday August 5, 2020</div>
+                    <button class="add-btn" id="add-chore">Add Chore</button>
             </div>
-            <div id="app" class="app">
-                    <ul class="chore-list" id="chore-list"></ul>
-                        <div id="noChore" class="no-chore">No Chores yet! <br> First, add family members then add chores.</div>
+            <div class="chore-counter">
+                <div class="completed-container">
+                    <div class="completed">Completed</div>
+                    <div class="completed-number">0</div>
+                </div>
+                <div class="remaining-container">
+                    <div class="remaining">Remaining</div>
+                    <div class="remaining-number">3</div>
+                </div>
+            </div>
+            <div class="main-chore-header">Chores</div>
+            <div class="chore">
+                <div class="main-chore-list">
+                    <div class="chore-list-header" role="rowgroup">
+                        <div class="flex-row" role="columnheader" id="chore-name"></div>
+                        <div class="flex-row" role="columnheader" id="chore-name">Chore Name</div>
+                        <div class="flex-row" role="columnheader" id="chore-owner">Owner</div>
+                        <div class="flex-row" role="columnheader" id="chore-date-assigned">Date Assigned</div>
+                        <div class="flex-row" role="columnheader" id="chore-date-due">Due Date</div>
+                        <div class="flex-row" role="columnheader" id="chore-name"></div>
+                        <div class="flex-row" role="columnheader" id="chore-name"></div>
+                    </div>
+                    <div id="app" class="app">
+                            <ul class="chore-list" id="chore-list"></ul>
+                                <div id="noChore" class="no-chore">No Chores yet! <br> First, add family members then add chores.</div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 </div>
 
 <div class="overlay" id="overlay">
@@ -116,40 +113,14 @@
         </div>
     </div>
 </div>
-</div>
 
 <div id="familyTab" class="tabcontent"> 
-    <div class="family-container">
-    <section class="sidebar">
-        <div class="sidebar-nav">    
-            <div class="top-logo">
-                <img src="img/Asset 1@2x.png" class="logo"/>
-            </div>
-            <div class="tab">
-                <div class="chore-nav">
-                    <div class="chore-nav-header">
-                        <button class="tablinks" id="defaultOpen" onclick="switchPage(event, 'choreTab')">Chores</button>
-                    </div>
-                    <div class="family-nav-header">
-                        <button class="tablinks" onclick="switchPage(event, 'familyTab')">Family</button>
-                    </div>
-                </div>
-            </div>
-            <div class="chore-nav-rooms">
-                <ul>
-                    <li><a href="allchores.html">Children</a></li>
-                    <li><a href="bedroom.html">Parents</a></li>
-                </ul>
-            </div>
-        
-        </div>
-    </section>
+    
     <div class="family">
         <div class="top-header">
             <div class="date">Monday July 20, 2020</div>
             <button class="add-btn" id="add-fam">Add Family</button>
         </div>
-     
         <div class="register-form">
             <div class="family-member-container">
                 <div class="family-member-list">
@@ -160,11 +131,9 @@
                     </div>
                 </div>
             </div>
-        
-            </div>          
-            
-        </div>
-    </div>  
+        </div>             
+    </div>
+     
         <div class="famOverlay" id="famOverlay">
             <div class="famOverlay-content">
                 <div class="chore-famOverlay-header">
@@ -185,9 +154,8 @@
                 </div>
             </div>
         </div>  
-
-
 </div>
+
 </div>
 
 
