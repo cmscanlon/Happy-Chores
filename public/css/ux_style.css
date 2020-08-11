@@ -287,15 +287,12 @@ input {
     justify-content: left;
 }
 
-#strikethrough:checked + .choreSpan {
-    text-decoration: line-through;
+ul li div {
+    text-decoration: none;
 }
 
-.choreSpan {
-    display: flex;
-    flex-direction: row;
-    /* align-content: space-between; */
-    /* width: calc(100% / 7); */
+ul li input[type=checkbox]:checked ~ div {
+    text-decoration: line-through;
 }
 
 .edit, .edit2, .edit3 {

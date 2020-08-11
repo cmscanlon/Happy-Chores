@@ -102,9 +102,6 @@ function addChore() {
     const choreDescription = document.createElement('div');
     setAttributes(choreDescription, {type: 'text', role: 'rowgroup', class: 'flex-table-row'});
     
-    const choreSpan = document.createElement('span');
-    setAttributes(choreSpan, {class: 'choreSpan'});
-    
     const choreName = document.createElement('div');
     setAttributes(choreName, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-name'});
     choreName.textContent = `${newChore.name}`;
@@ -147,11 +144,10 @@ function addChore() {
     choreDescription.appendChild(checkbtn);
     readOnlyDiv.appendChild(choreDescription);
 
-    choreSpan.appendChild(choreName);
-    choreSpan.appendChild(choreOwner);
-    choreSpan.appendChild(choreDueDate);
-    choreSpan.appendChild(choreDateAssign);
-    choreDescription.appendChild(choreSpan);
+    choreDescription.appendChild(choreName);
+    choreDescription.appendChild(choreOwner);
+    choreDescription.appendChild(choreDueDate);
+    choreDescription.appendChild(choreDateAssign);
     choreDescription.appendChild(editbtn);
     choreDescription.appendChild(delbtn);
 
