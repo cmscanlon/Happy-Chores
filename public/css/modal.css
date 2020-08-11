@@ -152,6 +152,11 @@ textarea {
     animation-name: animateright;
     animation-duration: 0.4s;
 }
+
+.chore-famOverlay-header {
+    padding: 20px;
+}
+
 .famClose {
     display: flex;
     flex-direction: row;
@@ -160,8 +165,8 @@ textarea {
     font-size: 25px;
     letter-spacing: 0;
     line-height: 30px;
-    margin-top: 66px;
-    margin-left: 200px;
+    margin-top: 20px;
+    margin-left: 180px;
 }
 
 .famClose-icon {
@@ -174,6 +179,10 @@ textarea {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.add-fam-member {
+    font-size: 25px;
 }
 
 .register-header {
@@ -222,6 +231,8 @@ label {
     margin-top: 10px;
     height: 45px;
     width: 250px;
+    box-shadow: 2px;
+    color: var(--light-text);
 }
 
 
