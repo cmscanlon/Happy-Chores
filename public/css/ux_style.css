@@ -17,7 +17,6 @@ body {
     background: var(--main);
     padding: 0;
     margin: 0;  
-    display: block;
 }
 
 .page {
@@ -26,8 +25,8 @@ body {
 }
 
 .add-btn {
-    margin-left: 474px;
-    margin-top: 66px;
+    margin-left: auto;
+    margin-top: 29px;
     height: 43px;
     width: 210px;
     border-radius: 21.5px;
@@ -42,11 +41,37 @@ body {
     background: var(--button);
 }
 
+.top-header {
+    display: flex;
+    flex-direction: row;
+    padding: 48px;
+}
+
+.date {
+    color: var(--text);
+    font-family: "Proxima Nova Thin";
+    font-size: 35px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 42px;
+    margin-top: 29px;
+    height: 42px;
+}
+
+.tabcontent {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
 #chore-form input[type="submit"]:disabled {
     background: var(--light-text);
   }
 
-/********Navigation Sidebar**********/
+
+/********Sidebar**********/
 
 .logo {
     width: 237px;
@@ -55,11 +80,19 @@ body {
     margin-left: 47px;
 }
 
-.sidebar {
-    display: inline-flex;
-    flex-direction: column;
-    width: 330px;
+section.sidebar {
+    display: flex;
+    flex: 0 0 320px;
+    flex-flow: column nowrap;
     height: 1024px;
+    background-color: var(--highlight);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
     background-color: var(--highlight);
 }
 
@@ -103,33 +136,25 @@ body {
 
 /***********Chore Main Content********/
 
-.top-header {
-    display: flex;
-    flex-direction: row;
+.chore {
+    padding: 48px;
 }
 
-.date {
-    color: var(--text);
-    font-family: "Proxima Nova Thin";
-    font-size: 35px;
-    font-weight: 300;
-    letter-spacing: 0;
-    line-height: 42px;
-    margin-top: 77px;
-    margin-left: 48px;
+.chore-content {
+    width: 100%;
+    height: 100%;
 }
 
 .chore-counter {
     display: flex;
     flex-direction: row;
+    padding: 16px;
 }
 
 .completed-container {
     height: 208px;
-    width: 285px;
     border-radius: 12px;
     background-color: var(--highlight);
-    margin-top: 64px;
     margin-left: 48px;
 }
 
@@ -160,7 +185,6 @@ body {
     width: 285px;
     border-radius: 12px;
     background-color: var(--highlight);
-    margin-top: 64px;
     margin-left: 69px;
 }
 
@@ -188,7 +212,7 @@ body {
 
 .main-chore-header {
     height: 30px;
-    width: 101px;
+    width: 100%;
     color: #000000;
     font-family: "Proxima Nova Bold";
     font-size: 25px;
@@ -201,11 +225,9 @@ body {
 
 .main-chore-list {
     height: 362px;
-    width: 900px;
+    width: 100%;
     border-radius: 12px;
     background-color: var(--highlight);
-    margin-left: 48px;
-    margin-top: 33px;
 }
 
 .chore-list-header {
@@ -249,11 +271,6 @@ input {
     margin-left: 1px;
 }
 
-.choresListSpan {
-    display: flex;
-    flex-direction: row wrap;
-}
-
 .flex-table-row {
     display: flex;
     flex-flow: row;
@@ -287,29 +304,30 @@ input {
 
 /************Family***************/
 
-.family-list-header {
-    color: #000000;
-    font-family: "Proxima Nova Bold";
-    font-size: 12px;
+.family-list {
+    color: var(--text);
+    font-family: "Proxima Nova Regular";
+    font-size: 16px;
     letter-spacing: 0;
     line-height: 30px;
-    text-transform: uppercase;
-    margin-top: 80px;
-    margin-left: 48px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .family-nav-header.tablinks {
     line-height: 0;
-    /* margin-left: 10px; */
 }
 
-.family-container {
+.family-member-container {
+    display: flex;
+    flex-direction: column;
     height: 408px;
     width: 285px;
     border-radius: 12px;
     background-color: var(--highlight);
-    margin-top: 64px;
-    margin-left: 48px;
+    margin-left: 64px;
+    margin-top: 14.5px;
 }
 
 .family-member {
@@ -322,16 +340,30 @@ input {
     margin-top: 14.5px;
 }
 
-.fam ul li {
-    list-style: none;
-}
-
-.family{
+.fam-flex-table-row {
     display: flex;
-    flex-direction: row;
+    flex-flow: row;
 }
 
-/*  Buttons  */
+.fam-flex-table {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.fam-flex-row {
+    width: calc(100% /2);
+    text-align: left;
+    justify-content: left;
+}
+
+.fam li {
+    list-style: none;
+    text-align: center;
+    color: rgba(0,0,0,0.6);
+}
+
+
+/**********  Buttons  ************/
 
 
 .delete {
@@ -340,34 +372,27 @@ input {
 	height: 15px;
     padding: 0 10px;
     color: rgba(0,0,0,0.6);
-    margin-left: 51px;
     fill: var(--button);
 }
 
 .editbtn {
 	width: 20px;
-	height: 20px;
-    /* padding: 0 0 0 50px;
-    margin-left: 113px; */
-    
+	height: 20px; 
 }
 
 .save {
 	width: 20px;
 	height: 20px;
-	/* padding: 0 5px; */
 }
 
 .cancel {
 	width: 20px;
 	height: 20px;
-	/* padding: 0 10px; */
 }
 
 .check {
     width: 18px;
     height: 18px;
-    /* padding: 0 10px 0 10px; */
     color: rgba(0,0,0,0.6);
 }
 

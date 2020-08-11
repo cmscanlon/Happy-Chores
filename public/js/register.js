@@ -36,8 +36,8 @@ function addFamilyMember() {
     setAttributes(choreDiv, {class: 'choreDiv', id: 'choreDiv'});
 
     const delbtn = document.createElement('input');
-    setAttributes(delbtn, {type: 'image', src: 'img/trash-outline.svg', class: 'delete', value: "Delete", onclick: 'deleteFamilyMember(event)' });
-
+    setAttributes(delbtn, {type: 'image', role: 'cell', src: 'img/trash-outline.svg', class: 'fam-flex-row', value: "Delete", onclick: 'deleteFamilyMember(event)' }); 
+    
     const newFamilyMember = {
         name: document.getElementById('fname').value
     }
@@ -45,8 +45,11 @@ function addFamilyMember() {
     const familyLi = document.createElement('li');
     setAttributes(familyLi, {class: 'family-li', id: `${newFamilyMember.name}` });
     
-    const familyInfo = document.createElement('span');
-    setAttributes(familyInfo, {name: 'familyInfo', id: 'familyInfo'});
+    const familyMemberList = document.createElement('div');
+    setAttributes(familyMemberList, {type: 'text', role: 'rowgroup', class: 'fam-flex-table-row'});
+
+    const familyInfo = document.createElement('div');
+    setAttributes(familyInfo, {type: 'text', role: 'cell', name: 'familyInfo', class: 'fam-flex-row', id: 'flex-row-famName'});
     familyInfo.textContent = `${newFamilyMember.name}`;
 
     const famValues = document.createElement('option');
@@ -56,8 +59,9 @@ function addFamilyMember() {
     familyMemberAdd.add(famValues);
     fam.appendChild(familyLi);
     familyList.push(newFamilyMember);
-    familyLi.appendChild(familyInfo);
-    familyLi.appendChild(delbtn);
+    familyMemberList.appendChild(familyInfo);
+    familyMemberList.appendChild(delbtn);
+    familyLi.appendChild(familyMemberList);
     clearFamFields();
     submitButtonActive();
                                                             
