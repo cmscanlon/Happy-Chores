@@ -98,7 +98,9 @@ section.sidebar {
 
 .chore-nav {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     font-family: 'Proxima Nova Bold';
     font-size: 16px;
     text-transform: uppercase;
@@ -111,8 +113,10 @@ section.sidebar {
 }
 
 .tablinks {
+    display: flex;
+    flex-direction: column;
     font-size: 16px;
-    margin-left: 50px;
+    width: 100%;
     color: var(--light-text);
     letter-spacing: 0;
     line-height: 20px;
@@ -126,31 +130,8 @@ section.sidebar {
     font-family: 'Proxima Nova Bold';
 }
 
-.chore-nav-rooms ul {
-    font-family: 'Proxima Nova Regular';
-    list-style: none;
-    color: var(--text);
-    font-size: 16px;
-    margin-top: 32px;
-    margin-left: 50px;
-    line-height: 20px;
-    color: var(--text);
-}
-
-.chore-nav-rooms li {
-    margin-bottom: 42px;
-    line-height: 20px;
-}
-
-.chore-nav-rooms li a {
-    color: #2B2826;
-    text-decoration: none;
-}
-
-.chore-nav-rooms li:hover {
-    width: 32%;
-    border-bottom: 3px solid var(--text);
-    font-family: 'Proxima Nova Bold';
+.chore-nav-header {
+    margin-bottom: 5%;
 }
 
 /***********Chore Main Content********/
@@ -306,6 +287,20 @@ input {
     justify-content: left;
 }
 
+.edit, .edit2, .edit3 {
+    background-color: #fff;
+    margin-top: 10px;
+    margin-bottom: 36px;
+    width: 250px;
+    color: #000000;
+    font-family: "Proxima Nova Regular";
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 30px;
+    border: none;
+    border: 1px solid #979797;
+    padding-bottom: 5px;
+}
 
 /************Family***************/
 
