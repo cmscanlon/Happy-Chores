@@ -282,9 +282,20 @@ input {
 }
 
 .flex-row {
-    width: calc(100% /7);
+    width: calc(100% / 7);
     text-align: left;
     justify-content: left;
+}
+
+#strikethrough:checked + .choreSpan {
+    text-decoration: line-through;
+}
+
+.choreSpan {
+    display: flex;
+    flex-direction: row;
+    /* align-content: space-between; */
+    /* width: calc(100% / 7); */
 }
 
 .edit, .edit2, .edit3 {
@@ -391,11 +402,10 @@ input {
 }
 
 .check {
-    width: 18px;
-    height: 18px;
+    width: 10px;
+    height: 10px;
     color: rgba(0,0,0,0.6);
 }
-
 
 
 

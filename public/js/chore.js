@@ -75,7 +75,7 @@ function setAttributes(elements, attributes) {
 function addChore() {
 
     const checkbtn = document.createElement('input');
-    setAttributes(checkbtn, {type: 'image', role: 'cell', src: 'img/stop-outline.svg', class: 'flex-row', value: "Check", }); 
+    setAttributes(checkbtn, {type: 'checkbox', role: 'cell', class: 'flex-row', id: 'strikethrough', value: "Check", }); 
 
     const delbtn = document.createElement('input');
     setAttributes(delbtn, {type: 'image', role: 'cell', src: 'img/trash-outline.svg', class: 'flex-row', value: "Delete", onclick: 'deleteChore(event)'});
@@ -101,6 +101,9 @@ function addChore() {
 
     const choreDescription = document.createElement('div');
     setAttributes(choreDescription, {type: 'text', role: 'rowgroup', class: 'flex-table-row'});
+    
+    const choreSpan = document.createElement('span');
+    setAttributes(choreSpan, {class: 'choreSpan'});
     
     const choreName = document.createElement('div');
     setAttributes(choreName, {type: 'text', role: 'cell', class: 'flex-row', id: 'flex-row-name'});
@@ -144,10 +147,11 @@ function addChore() {
     choreDescription.appendChild(checkbtn);
     readOnlyDiv.appendChild(choreDescription);
 
-    choreDescription.appendChild(choreName);
-    choreDescription.appendChild(choreOwner);
-    choreDescription.appendChild(choreDueDate);
-    choreDescription.appendChild(choreDateAssign);
+    choreSpan.appendChild(choreName);
+    choreSpan.appendChild(choreOwner);
+    choreSpan.appendChild(choreDueDate);
+    choreSpan.appendChild(choreDateAssign);
+    choreDescription.appendChild(choreSpan);
     choreDescription.appendChild(editbtn);
     choreDescription.appendChild(delbtn);
 
