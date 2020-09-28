@@ -168,6 +168,7 @@ function addChore() {
     clearFields();
     submitActive();
     noChores();
+    remainingBoxNumber();
 
     return false; 
 }
@@ -177,6 +178,7 @@ function deleteChore(event) {
     if (chores.parentNode) {
         chores.parentNode.removeChild(event.target.closest('li'));
     }
+    remainingBoxNumber();
 }
 const editModeDiv = document.getElementById('div2');
 
@@ -234,6 +236,19 @@ function noChores() {
     noChoreDiv.style.display = 'none';
     choreListApp.style.display = 'block'
 }
+
+function remainingBoxNumber() {
+    const choreList = document.getElementById("chore-list");
+    const remainingTotal = choreList.children.length;
+
+    const remaining = document.getElementById("remaining-number");
+    remaining.innerText = remainingTotal;
+
+}
+
+//function completedBoxNumber() {
+//    const
+//}
 
 function clearFields() {
     const elements = document.getElementById('chore-form').elements;

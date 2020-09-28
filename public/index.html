@@ -37,11 +37,11 @@
             <div class="chore-counter">
                 <div class="completed-container">
                     <div class="completed">Completed</div>
-                    <div class="completed-number">0</div>
+                    <div class="completed-number" id="completed-number" onclick="completedBoxNumber()">0</div>
                 </div>
                 <div class="remaining-container">
                     <div class="remaining">Remaining</div>
-                    <div class="remaining-number">3</div>
+                    <div class="remaining-number" id="remaining-number" onclick="remainingBoxNumber()">0</div>
                 </div>
             </div>
             <div class="main-chore-header">Chores</div>
@@ -86,7 +86,7 @@
                         <option>Family Room</option>
                         <option>Yard</option>
                     </select><br>
-                <label for "familyMembers">Assign to</label><br>
+                <label for="familyMembers">Assign to</label><br>
                     <select name="famMembers" id="famMembers" onchange="submitActive()">
                         <option>Select Family Member</option>
                     </select><br>
